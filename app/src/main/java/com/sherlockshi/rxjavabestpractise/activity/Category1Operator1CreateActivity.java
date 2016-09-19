@@ -30,7 +30,7 @@ public class Category1Operator1CreateActivity extends BaseActivity {
     private TextView tvOutput;
     private CardView cvOutput;
 
-    private String[] outputString = {"Next: 1", "\nNext: 2", "\nNext: 3", "\nNext: 4", "\nSequence complete."};
+    private String[] outputString = {"Next: 0", "\nNext: 1", "\nNext: 2", "\nNext: 3", "\nSequence complete."};
     private StringBuffer outputStringBuffer = new StringBuffer();
 
     @Override
@@ -55,7 +55,7 @@ public class Category1Operator1CreateActivity extends BaseActivity {
     }
 
     private void initData() {
-        tvSampleCode.setText(getSampleCode());
+        tvSampleCode.setText(getCreateOperatorSampleCode());
         SpannableUtil.setPartialTextOtherColor(tvSampleCode, 11, 6);
     }
 
@@ -78,7 +78,7 @@ public class Category1Operator1CreateActivity extends BaseActivity {
             public void call(Subscriber<? super Integer> observer) {
                 try {
                     if (!observer.isUnsubscribed()) {
-                        for (int i = 1; i < 5; i++) {
+                        for (int i = 0; i < 4; i++) {
                             observer.onNext(i);
                         }
                         observer.onCompleted();
@@ -125,13 +125,13 @@ public class Category1Operator1CreateActivity extends BaseActivity {
                 });
     }
 
-    private String getSampleCode() {
+    private String getCreateOperatorSampleCode() {
         return "Observable.create(new Observable.OnSubscribe<Integer>() {\n" +
                 "            @Override\n" +
                 "            public void call(Subscriber<? super Integer> observer) {\n" +
                 "                try {\n" +
                 "                    if (!observer.isUnsubscribed()) {\n" +
-                "                        for (int i = 1; i < 5; i++) {\n" +
+                "                        for (int i = 0; i < 4; i++) {\n" +
                 "                            observer.onNext(i);\n" +
                 "                        }\n" +
                 "                        observer.onCompleted();\n" +

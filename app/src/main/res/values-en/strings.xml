@@ -2,6 +2,13 @@
 <resources>
 	<string name="app_name">RxJavaBestPractise</string>
 
+	<string name="activity_main_press_again_to_quit">press again to quit application</string>
+
+	<string name="activity_description">Description</string>
+	<string name="activity_graph">Graph</string>
+	<string name="activity_sample_code">Sample Code</string>
+	<string name="activity_output">Output</string>
+
 	<string name="activity_main_1_creating_observables">1. Creating Observables</string>
 	<string name="activity_main_2_transforming_observables">2. Transforming Observables</string>
 	<string name="activity_main_3_filtering_observables">3. Filtering Observables</string>
@@ -14,4 +21,22 @@
 	<string name="activity_main_10_connectable_observable_operators">10. Connectable Observable Operators</string>
 	<string name="activity_main_11_operators_to_convert_observables">11. Operators to Convert Observables</string>
 
+    <!-- 1. Creating Observables start -->
+    <string name="activity_category1_creating_observables_1_create">1.1 create</string>
+    <string name="activity_category1_creating_observables_1_create_description">You can create an Observable from scratch by using the Create operator. You pass this operator a function that accepts the observer as its parameter. Write this function so that it behaves as an Observable — by calling the observer’s onNext, onError, and onCompleted methods appropriately.
+        \n&#160;&#160;&#160;&#160;A well-formed finite Observable must attempt to call either the observer’s onCompleted method exactly once or its onError method exactly once, and must not thereafter attempt to call any of the observer’s other methods.
+        \n&#160;&#160;&#160;&#160;RxJava implements this operator as create.
+        \n&#160;&#160;&#160;&#160;It is good practice to check the observer’s isUnsubscribed state from within the function you pass to create so that your Observable can stop emitting items or doing expensive calculations when there is no longer an interested observer.
+        \n&#160;&#160;&#160;&#160; create does not by default operate on any particular Scheduler.</string>
+
+    <string name="activity_category1_creating_observables_2_defer">1.2 defer</string>
+    <string name="activity_category1_creating_observables_3_empty_never_throw">1.3 empty/never/throw</string>
+    <string name="activity_category1_creating_observables_4_from">1.4 from</string>
+    <string name="activity_category1_creating_observables_5_interval">1.5 interval</string>
+    <string name="activity_category1_creating_observables_6_just">1.6 just</string>
+    <string name="activity_category1_creating_observables_7_range">1.7 range</string>
+    <string name="activity_category1_creating_observables_8_repeat">1.8 repeat</string>
+    <string name="activity_category1_creating_observables_9_start">1.9 start</string>
+    <string name="activity_category1_creating_observables_10_timer">1.10 timer</string>
+    <!-- 1. Creating Observables end -->
 </resources>
