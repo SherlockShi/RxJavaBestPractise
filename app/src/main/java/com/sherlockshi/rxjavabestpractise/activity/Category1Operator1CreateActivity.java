@@ -15,6 +15,7 @@ import com.sherlockshi.rxjavabestpractise.util.ViewUtil;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
@@ -38,15 +39,24 @@ public class Category1Operator1CreateActivity extends BaseActivity {
 
         setContentView(R.layout.activity_category1_operator1_create);
 
+        initView();
+
+        initData();
+    }
+
+    private void initView() {
         initFloatingActionButton();
 
         tvSampleCode = (TextView) findViewById(R.id.tv_sample_code);
-        tvSampleCode.setText(getSampleCode());
-        SpannableUtil.setPartialTextOtherColor(tvSampleCode, 11, 6);
 
         tvOutput = (TextView) findViewById(R.id.tv_output);
 
         cvOutput = (CardView) findViewById(R.id.cv_output);
+    }
+
+    private void initData() {
+        tvSampleCode.setText(getSampleCode());
+        SpannableUtil.setPartialTextOtherColor(tvSampleCode, 11, 6);
     }
 
     private void initFloatingActionButton() {
@@ -55,57 +65,96 @@ public class Category1Operator1CreateActivity extends BaseActivity {
         getFab().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ViewUtil.hide(cvOutput);
+                runCreateOperatorCode();
 
-                StringBufferUtil.clear(outputStringBuffer);
-
-                Observable
-                        .interval(500, TimeUnit.MILLISECONDS)
-                        .take(outputString.length)
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Action1<Long>() {
-                            @Override
-                            public void call(Long aLong) {
-                                ViewUtil.show(cvOutput);
-
-                                outputStringBuffer.append(outputString[aLong.intValue()]);
-                                tvOutput.setText(outputStringBuffer);
-                            }
-                        });
+                showOutputInScreen();
             }
         });
     }
 
+    private void runCreateOperatorCode() {
+        Observable.create(new Observable.OnSubscribe<Integer>() {
+            @Override
+            public void call(Subscriber<? super Integer> observer) {
+                try {
+                    if (!observer.isUnsubscribed()) {
+                        for (int i = 1; i < 5; i++) {
+                            observer.onNext(i);
+                        }
+                        observer.onCompleted();
+                    }
+                } catch (Exception e) {
+                    observer.onError(e);
+                }
+            }
+        }).subscribe(new Subscriber<Integer>() {
+            @Override
+            public void onCompleted() {
+                System.out.println("Sequence complete.");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                System.out.println("Next: " + integer);
+            }
+        });
+    }
+
+    private void showOutputInScreen() {
+        ViewUtil.hide(cvOutput);
+
+        StringBufferUtil.clear(outputStringBuffer);
+
+        Observable
+                .interval(500, TimeUnit.MILLISECONDS)
+                .take(outputString.length)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<Long>() {
+                    @Override
+                    public void call(Long aLong) {
+                        ViewUtil.show(cvOutput);
+
+                        outputStringBuffer.append(outputString[aLong.intValue()]);
+                        tvOutput.setText(outputStringBuffer);
+                    }
+                });
+    }
+
     private String getSampleCode() {
         return "Observable.create(new Observable.OnSubscribe<Integer>() {\n" +
-                "    @Override\n" +
-                "    public void call(Subscriber<? super Integer> observer) {\n" +
-                "        try {\n" +
-                "            if (!observer.isUnsubscribed()) {\n" +
-                "                for (int i = 1; i < 5; i++) {\n" +
-                "                    observer.onNext(i);\n" +
+                "            @Override\n" +
+                "            public void call(Subscriber<? super Integer> observer) {\n" +
+                "                try {\n" +
+                "                    if (!observer.isUnsubscribed()) {\n" +
+                "                        for (int i = 1; i < 5; i++) {\n" +
+                "                            observer.onNext(i);\n" +
+                "                        }\n" +
+                "                        observer.onCompleted();\n" +
+                "                    }\n" +
+                "                } catch (Exception e) {\n" +
+                "                    observer.onError(e);\n" +
                 "                }\n" +
-                "                observer.onCompleted();\n" +
                 "            }\n" +
-                "        } catch (Exception e) {\n" +
-                "            observer.onError(e);\n" +
-                "        }\n" +
-                "    }\n" +
-                " } ).subscribe(new Subscriber<Integer>() {\n" +
-                "        @Override\n" +
-                "        public void onNext(Integer item) {\n" +
-                "            System.out.println(\"Next: \" + item);\n" +
-                "        }\n" +
+                "        }).subscribe(new Subscriber<Integer>() {\n" +
+                "            @Override\n" +
+                "            public void onCompleted() {\n" +
+                "                System.out.println(\"Sequence complete.\");\n" +
+                "            }\n" +
                 "\n" +
-                "        @Override\n" +
-                "        public void onError(Throwable error) {\n" +
-                "            System.err.println(\"Error: \" + error.getMessage());\n" +
-                "        }\n" +
+                "            @Override\n" +
+                "            public void onError(Throwable e) {\n" +
+                "                System.out.println(\"Error: \" + e.getMessage());\n" +
+                "            }\n" +
                 "\n" +
-                "        @Override\n" +
-                "        public void onCompleted() {\n" +
-                "            System.out.println(\"Sequence complete.\");\n" +
-                "        }\n" +
-                "    });";
+                "            @Override\n" +
+                "            public void onNext(Integer integer) {\n" +
+                "                System.out.println(\"Next: \" + integer);\n" +
+                "            }\n" +
+                "        });";
     }
 }
