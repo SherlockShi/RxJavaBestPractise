@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">RxJavaBestPractise</string>
+
+	<string name="activity_main_1_creating_observables">1. Creating Observables</string>
+	<string name="activity_main_2_transforming_observables">2. Transforming Observables</string>
+	<string name="activity_main_3_filtering_observables">3. Filtering Observables</string>
+	<string name="activity_main_4_combining_observables">4. Combining Observables</string>
+	<string name="activity_main_5_error_handling_operators">5. Error Handling Operators</string>
+	<string name="activity_main_6_observable_utility_operators">6. Observable Utility Operators</string>
+	<string name="activity_main_7_conditional_and_boolean_operators">7. Conditional and Boolean Operators</string>
+	<string name="activity_main_8_mathematical_and_aggregate_operators">8. Mathematical and Aggregate Operators</string>
+	<string name="activity_main_9_backpressure_operators">9. Backpressure Operators</string>
+	<string name="activity_main_10_connectable_observable_operators">10. Connectable Observable Operators</string>
+	<string name="activity_main_11_operators_to_convert_observables">11. Operators to Convert Observables</string>
+
+</resources>

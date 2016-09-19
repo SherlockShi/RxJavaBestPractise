@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">RxJavaBestPractise</string>
+
+    <string name="activity_graph">示意图</string>
+    <string name="activity_sample_code">示例代码</string>
+    <string name="activity_output">输出</string>
+
+    <string name="activity_main_1_creating_observables">1. 创建操作</string>
+    <string name="activity_main_2_transforming_observables">2. 变换操作</string>
+    <string name="activity_main_3_filtering_observables">3. 过滤操作</string>
+    <string name="activity_main_4_combining_observables">4. 组合操作</string>
+    <string name="activity_main_5_error_handling_operators">5. 错误处理</string>
+    <string name="activity_main_6_observable_utility_operators">6. 辅助操作</string>
+    <string name="activity_main_7_conditional_and_boolean_operators">7. 条件和布尔操作</string>
+    <string name="activity_main_8_mathematical_and_aggregate_operators">8. 算术和聚合操作</string>
+    <string name="activity_main_9_backpressure_operators">9. </string>
+    <string name="activity_main_10_connectable_observable_operators">10. 连接操作</string>
+    <string name="activity_main_11_operators_to_convert_observables">11. 转换操作</string>
+
+    <!-- 1. 创建操作 start -->
+    <string name="activity_category1_creating_observables_1_create">1.1 create</string>
+    <string name="activity_category1_creating_observables_2_defer">1.2 defer</string>
+    <string name="activity_category1_creating_observables_3_empty_never_throw">1.3 empty/never/throw</string>
+    <string name="activity_category1_creating_observables_4_from">1.4 from</string>
+    <string name="activity_category1_creating_observables_5_interval">1.5 interval</string>
+    <string name="activity_category1_creating_observables_6_just">1.6 just</string>
+    <string name="activity_category1_creating_observables_7_range">1.7 range</string>
+    <string name="activity_category1_creating_observables_8_repeat">1.8 repeat</string>
+    <string name="activity_category1_creating_observables_9_start">1.9 start</string>
+    <string name="activity_category1_creating_observables_10_timer">1.10 timer</string>
+    <!-- 1. 创建操作 end -->
+
+</resources>

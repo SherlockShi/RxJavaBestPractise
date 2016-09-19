@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/button_margin"
+        android:orientation="vertical"
+        tools:context="com.sherlockshi.rxjavapractise.MainActivity">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_1_create"
+            android:onClick="jumpToCategory1Operator1CreateActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_2_defer"
+            android:onClick="jumpToTransformingObservablesActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_3_empty_never_throw"
+            android:onClick="jumpToFilteringObservablesActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_4_from"
+            android:onClick="jumpToCombiningObservablesActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_5_interval"
+            android:onClick="jumpToErrorHandlingOperatorsActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_6_just"
+            android:onClick="jumpToObservableUtilityOperatorsActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_7_range"
+            android:onClick="jumpToConditionalAndBooleanOperatorsActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_8_repeat"
+            android:onClick="jumpToMathematicalAndAggregateOperatorsActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_9_start"
+            android:onClick="jumpToBackpressureOperatorsActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/activity_category1_creating_observables_10_timer"
+            android:onClick="jumpToConnectableObservableOperatorsActivity"/>
+    </LinearLayout>
+</ScrollView>

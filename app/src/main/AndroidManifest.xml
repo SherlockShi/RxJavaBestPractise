@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sherlockshi.rxjavabestpractise">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.Category1CreatingObservablesActivity"
+            android:label="@string/activity_main_1_creating_observables"
+            android:parentActivityName=".MainActivity">
+        </activity>
+
+        <activity android:name=".activity.Category2TransformingObservablesActivity"
+            android:label="@string/activity_main_2_transforming_observables">
+        </activity>
+
+        <activity android:name=".activity.Category3FilteringObservablesActivity"
+            android:label="@string/activity_main_3_filtering_observables">
+        </activity>
+
+        <activity android:name=".activity.Category4CombiningObservablesActivity"
+            android:label="@string/activity_main_4_combining_observables">
+        </activity>
+
+        <activity android:name=".activity.Category5ErrorHandlingOperatorsActivity"
+            android:label="@string/activity_main_5_error_handling_operators">
+        </activity>
+
+        <activity android:name=".activity.Category6ObservableUtilityOperatorsActivity"
+            android:label="@string/activity_main_6_observable_utility_operators">
+        </activity>
+
+        <activity android:name=".activity.Category7ConditionalAndBooleanOperatorsActivity"
+            android:label="@string/activity_main_7_conditional_and_boolean_operators">
+        </activity>
+
+        <activity android:name=".activity.Category8MathematicalAndAggregateOperatorsActivity"
+            android:label="@string/activity_main_8_mathematical_and_aggregate_operators">
+        </activity>
+
+        <activity android:name=".activity.Category9BackpressureOperatorsActivity"
+            android:label="@string/activity_main_9_backpressure_operators">
+        </activity>
+
+        <activity android:name=".activity.Category10ConnectableObservableOperatorsActivity"
+            android:label="@string/activity_main_10_connectable_observable_operators">
+        </activity>
+
+        <activity android:name=".activity.Category11OperatorsToConvertObservablesActivity"
+            android:label="@string/activity_main_11_operators_to_convert_observables">
+        </activity>
+
+        <activity android:name=".activity.Category1Operator1CreateActivity"
+            android:label="@string/activity_category1_creating_observables_1_create">
+        </activity>
+    </application>
+
+</manifest>
