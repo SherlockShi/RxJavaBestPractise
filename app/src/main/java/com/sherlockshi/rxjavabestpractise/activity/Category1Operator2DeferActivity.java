@@ -15,16 +15,16 @@ import com.sherlockshi.rxjavabestpractise.util.ViewUtil;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
+import rx.functions.Func0;
 
 /**
  * Author: SherlockShi
  * Date:   2016-09-17 21:41
  * Description:
  */
-public class Category1Operator1CreateActivity extends BaseActivity {
+public class Category1Operator2DeferActivity extends BaseActivity {
 
     private TextView tvSampleCode;
     private TextView tvOutput;
@@ -33,11 +33,13 @@ public class Category1Operator1CreateActivity extends BaseActivity {
     private String[] outputString = {"Next: 0", "\nNext: 1", "\nNext: 2", "\nNext: 3", "\nSequence complete."};
     private StringBuffer outputStringBuffer = new StringBuffer();
 
+    int number;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_category1_operator1_create);
+        setContentView(R.layout.activity_category1_operator2_defer);
 
         initView();
 
@@ -75,36 +77,48 @@ public class Category1Operator1CreateActivity extends BaseActivity {
     }
 
     private void runCreateOperatorCode() {
-        Observable.create(new Observable.OnSubscribe<Integer>() {
-            @Override
-            public void call(Subscriber<? super Integer> observer) {
-                try {
-                    if (!observer.isUnsubscribed()) {
-                        for (int i = 0; i < 4; i++) {
-                            observer.onNext(i);
-                        }
-                        observer.onCompleted();
-                    }
-                } catch (Exception e) {
-                    observer.onError(e);
-                }
-            }
-        }).subscribe(new Subscriber<Integer>() {
-            @Override
-            public void onCompleted() {
-                System.out.println("Sequence complete.");
-            }
+        // TODO: 16/9/23 验证每次订阅时，生成的Observable为不同对象
+        number = 1;
+        Observable justObservable = Observable.just(number);
 
+        number = 2;
+        Observable deferObservable = Observable.defer(new Func0<Observable<Integer>>() {
             @Override
-            public void onError(Throwable e) {
-                System.out.println("Error: " + e.getMessage());
-            }
-
-            @Override
-            public void onNext(Integer integer) {
-                System.out.println("Next: " + integer);
+            public Observable<Integer> call() {
+                return Observable.just(number);
             }
         });
+
+        number = 3;
+
+        justObservable.subscribe(new Action1() {
+            @Override
+            public void call(Object o) {
+                System.out.println("just result: " + o.toString());
+            }
+        });
+
+        System.out.println("deferObservable0: " + deferObservable.toString());
+
+        deferObservable.subscribe(new Action1() {
+            @Override
+            public void call(Object o) {
+                System.out.println("defer1 result: " + o.toString());
+            }
+        });
+
+        System.out.println("deferObservable1: " + deferObservable.toString());
+
+        number = 4;
+
+        deferObservable.subscribe(new Action1() {
+            @Override
+            public void call(Object o) {
+                System.out.println("defer2 result: " + o.toString());
+            }
+        });
+
+        System.out.println("deferObservable2: " + deferObservable.toString());
     }
 
     private void showOutputInScreen() {

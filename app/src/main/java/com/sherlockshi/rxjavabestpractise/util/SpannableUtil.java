@@ -19,9 +19,9 @@ public class SpannableUtil {
         textView.setText(spannable);
     }
 
-    public static void setPartialTextOtherColor(TextView textView, int start, int count) {
+    public static void setPartialTextOtherColor(TextView textView, int start, int end) {
         Spannable spannable = new SpannableString(textView.getText());
-        spannable.setSpan(new ForegroundColorSpan(Color.RED), start, start+count, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannable.setSpan(new ForegroundColorSpan(Color.RED), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         textView.setText(spannable);
     }
 }

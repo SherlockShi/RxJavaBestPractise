@@ -29,4 +29,12 @@ public class Category1CreatingObservablesActivity extends BaseActivity {
     public void jumpToCategory1Operator1CreateActivity(View view) {
         startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator1CreateActivity.class));
     }
+
+    /**
+     * 1.2 defer
+     * @param view
+     */
+    public void jumpToCategory1Operator2DeferActivity(View view) {
+        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator2DeferActivity.class));
+    }
 }

@@ -29,6 +29,20 @@
         \n&#160;&#160;&#160;&#160; create 方法默认不在任何特定的调度器上执行。</string>
 
     <string name="activity_category1_creating_observables_2_defer">1.2 defer</string>
+    <string name="activity_category1_creating_observables_2_defer_description">&#160;&#160;&#160;&#160;Defer操作符会一直等待直到有观察者订阅它，然后它使用Observable工厂方法生成一个Observable。它对每个观察者都这样做，因此尽管每个订阅者都以为自己订阅的是同一个Observable，事实上每个订阅者获取的是它们自己的单独的数据序列。
+        \n&#160;&#160;&#160;&#160;在某些情况下，等待直到最后一分钟（就是知道订阅发生时）才生成Observable可以确保Observable包含最新的数据。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为 defer 方法。这个操作符接受一个你选择的Observable工厂函数作为单个参数。这个函数没有参数，返回一个Observable。
+        \n&#160;&#160;&#160;&#160;defer方法默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category1_creating_observables_2_defer_code_prefix_introductions">由于 defer 操作有以下几个特点：
+        \n&#160;&#160;&#160;&#160;1) 订阅后才执行
+        \n&#160;&#160;&#160;&#160;2) 每次都会重新创建新的Observable
+        \n故本例从这两个特点进行说明。
+        \n本例参考《Android RxJava使用介绍（二） RxJava的操作符》- 呼啸而过11。
+        \n\n由运行结果可以看出：
+        \n&#160;&#160;&#160;&#160;1) 订阅后才执行: just操作符是在创建Observable就进行了赋值操作，而defer是在订阅者订阅时才创建Observable，此时才进行真正的赋值操作，保证Observable的状态是最新的。
+        \n&#160;&#160;&#160;&#160;2) 每次都会重新创建新的Observable(待验证)\n</string>
+
     <string name="activity_category1_creating_observables_3_empty_never_throw">1.3 empty/never/throw</string>
     <string name="activity_category1_creating_observables_4_from">1.4 from</string>
     <string name="activity_category1_creating_observables_5_interval">1.5 interval</string>

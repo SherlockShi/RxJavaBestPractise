@@ -64,6 +64,10 @@
         <activity android:name=".activity.Category1Operator1CreateActivity"
             android:label="@string/activity_category1_creating_observables_1_create">
         </activity>
+
+        <activity android:name=".activity.Category1Operator2DeferActivity"
+            android:label="@string/activity_category1_creating_observables_2_defer">
+        </activity>
     </application>
 
 </manifest>

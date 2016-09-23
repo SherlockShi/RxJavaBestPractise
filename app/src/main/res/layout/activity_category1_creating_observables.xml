@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             style="@style/ButtonStyle"
             android:text="@string/activity_category1_creating_observables_2_defer"
-            android:onClick="jumpToTransformingObservablesActivity"/>
+            android:onClick="jumpToCategory1Operator2DeferActivity"/>
 
         <Button
             android:layout_width="match_parent"
