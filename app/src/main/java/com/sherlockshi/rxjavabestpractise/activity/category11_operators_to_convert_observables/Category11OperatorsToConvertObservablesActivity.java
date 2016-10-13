@@ -1,15 +1,16 @@
-package com.sherlockshi.rxjavabestpractise.activity;
+package com.sherlockshi.rxjavabestpractise.activity.category11_operators_to_convert_observables;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import com.sherlockshi.rxjavabestpractise.base.BaseOperatorListActivity;
 
 /**
  * Author: SherlockShi
  * Date:   2016-09-16 20:33
  * Description:
  */
-public class Category11OperatorsToConvertObservablesActivity extends AppCompatActivity {
+public class Category11OperatorsToConvertObservablesActivity extends BaseOperatorListActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

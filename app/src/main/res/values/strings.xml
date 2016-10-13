@@ -43,14 +43,61 @@
         \n&#160;&#160;&#160;&#160;1) 订阅后才执行: just操作符是在创建Observable就进行了赋值操作，而defer是在订阅者订阅时才创建Observable，此时才进行真正的赋值操作，保证Observable的状态是最新的。
         \n&#160;&#160;&#160;&#160;2) 每次都会重新创建新的Observable(待验证)\n</string>
 
-    <string name="activity_category1_creating_observables_3_empty_never_throw">1.3 empty/never/throw</string>
+    <string name="activity_category1_creating_observables_31_empty">1.3.1 empty</string>
+    <string name="activity_category1_creating_observables_32_never">1.3.2 never</string>
+    <string name="activity_category1_creating_observables_33_throw">1.3.3 throw</string>
+    <string name="activity_category1_creating_observables_31_empty_description">&#160;&#160;&#160;&#160;创建一个不发射任何数据但是正常终止的Observable。
+        \n&#160;&#160;&#160;&#160;empty操作符一般会跟其它操作符配合使用。</string>
+    <string name="activity_category1_creating_observables_32_never_description">&#160;&#160;&#160;&#160;创建一个不发射数据也不终止的Observable。</string>
+    <string name="activity_category1_creating_observables_33_throw_description">&#160;&#160;&#160;&#160;创建一个不发射数据以一个错误终止的Observable。</string>
+
     <string name="activity_category1_creating_observables_4_from">1.4 from</string>
+    <string name="activity_category1_creating_observables_4_from_description">&#160;&#160;&#160;&#160;将其它种类的对象和数据类型转换为Observable。
+        \n&#160;&#160;&#160;&#160;当你使用Observable时，如果你要处理的数据都可以转换成展现为Observables，而不是需要混合使用Observables和其它类型的数据，会非常方便。这让你在数据流的整个生命周期中，可以使用一组统一的操作符来管理它们。
+        \n&#160;&#160;&#160;&#160;例如，Iterable可以看成是同步的Observable；Future，可以看成是总是只发射单个数据的Observable。通过显式地将那些数据转换为Observables，你可以像使用Observable一样与它们交互。
+        \n&#160;&#160;&#160;&#160;因此，大部分ReactiveX实现都提供了将语言特定的对象和数据结构转换为Observables的方法。
+        \n&#160;&#160;&#160;&#160;在RxJava中，from操作符可以转换Future、Iterable和数组。对于Iterable和数组，产生的Observable会发射Iterable或数组的每一项数据。
+        \n&#160;&#160;&#160;&#160;对于Future，它会发射Future.get()方法返回的单个数据。from方法有一个可接受两个可选参数的版本，分别指定超时时长和时间单位。如果过了指定的时长Future还没有返回一个值，这个Observable会发射错误通知并终止。
+        \n&#160;&#160;&#160;&#160;from默认不在任何特定的调度器上执行。然而你可以将Scheduler作为可选的第二个参数传递给Observable，它会在那个调度器上管理这个Future。</string>
+
     <string name="activity_category1_creating_observables_5_interval">1.5 interval</string>
+    <string name="activity_category1_creating_observables_5_interval_description">&#160;&#160;&#160;&#160;创建一个按固定时间间隔发射整数序列的Observable。
+        \n&#160;&#160;&#160;&#160;Interval操作符返回一个Observable，它按固定的时间间隔发射一个无限递增的整数序列。
+        \n&#160;&#160;&#160;&#160;还有一个版本的interval返回一个Observable，它在指定延迟之后先发射一个零值，然后再按照指定的时间间隔发射递增的数字。这个版本的interval在RxJava 1.0.0中叫做timer，但是那个方法已经不建议使用了，因为一个名叫interval的操作符有同样的功能。
+        \n&#160;&#160;&#160;&#160;interval默认在computation调度器上执行。你也可以传递一个可选的Scheduler参数来指定调度器。
+        \n&#160;&#160;&#160;&#160;需要注意的是这个对象是运行在computation Scheduler，所以如果需要在view中显示结果，要在主线程中订阅。</string>
+
     <string name="activity_category1_creating_observables_6_just">1.6 just</string>
+    <string name="activity_category1_creating_observables_6_just_description">&#160;&#160;&#160;&#160;创建一个发射指定值的Observable。
+        \n&#160;&#160;&#160;&#160;Just将单个数据转换为发射那个数据的Observable。
+        \n&#160;&#160;&#160;&#160;Just类似于From，但是From会将数组或Iterable的数据取出然后逐个发射，而Just只是简单的原样发射，将数组或Iterable当做单个数据。
+        \n&#160;&#160;&#160;&#160;注意：如果你传递null给Just，它会返回一个发射null值的Observable。不要误认为它会返回一个空Observable（完全不发射任何数据的Observable），如果需要空Observable你应该使用Empty操作符。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为just函数，它接受一至九个参数，返回一个按参数列表顺序发射这些数据的Observable。</string>
+
     <string name="activity_category1_creating_observables_7_range">1.7 range</string>
+    <string name="activity_category1_creating_observables_7_range_description">&#160;&#160;&#160;&#160;创建一个发射特定整数序列的Observable。
+        \n&#160;&#160;&#160;&#160;Range操作符发射一个范围内的有序整数序列，你可以指定范围的起始和长度。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为range函数，它接受两个参数，一个是范围的起始值，一个是范围的数据的数目。如果你将第二个参数设为0，将导致Observable不发射任何数据（如果设置为负数，会抛异常）。
+        \n&#160;&#160;&#160;&#160;range默认不在任何特定的调度器上执行。有一个变体可以通过可选参数指定Scheduler。</string>
+
     <string name="activity_category1_creating_observables_8_repeat">1.8 repeat</string>
+    <string name="activity_category1_creating_observables_8_repeat_description">&#160;&#160;&#160;&#160;创建一个发射特定数据重复多次的Observable。
+        \n&#160;&#160;&#160;&#160;Repeat重复地发射数据。某些实现允许你重复的发射某个数据序列，还有一些允许你限制重复的次数。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为repeat方法。它不是创建一个Observable，而是重复发射原始Observable的数据序列，这个序列或者是无限的，或者通过repeat(n)指定重复次数。
+        \n&#160;&#160;&#160;&#160;repeat操作符默认在trampoline调度器上执行。有一个变体可以通过可选参数指定Scheduler。</string>
+
     <string name="activity_category1_creating_observables_9_start">1.9 start</string>
+    <string name="activity_category1_creating_observables_9_start_repeat_description">&#160;&#160;&#160;&#160;返回一个Observable，它发射一个类似于函数声明的值。
+        \n&#160;&#160;&#160;&#160;编程语言有很多种方法可以从运算结果中获取值，它们的名字一般叫functions, futures, actions, callables, runnables等等。在Start目录下的这组操作符可以让它们表现得像Observable，因此它们可以在Observables调用链中与其它Observable搭配使用。
+        \n&#160;&#160;&#160;&#160;Start操作符的多种RxJava实现都属于可选的rxjava-async模块。
+        \n&#160;&#160;&#160;&#160;rxjava-async模块包含start操作符，它接受一个函数作为参数，调用这个函数获取一个值，然后返回一个会发射这个值给后续观察者的Observable。
+        \n&#160;&#160;&#160;&#160;注意：这个函数只会被执行一次，即使多个观察者订阅这个返回的Observable。</string>
+
     <string name="activity_category1_creating_observables_10_timer">1.10 timer</string>
+    <string name="activity_category1_creating_observables_10_timer_repeat_description">&#160;&#160;&#160;&#160;创建一个Observable，它在一个给定的延迟后发射一个特殊的值。
+        \n&#160;&#160;&#160;&#160;Timer操作符创建一个在给定的时间段之后返回一个特殊值的Observable。
+        \n&#160;&#160;&#160;&#160;timer返回一个Observable，它在延迟一段给定的时间后发射一个简单的数字0。
+        \n&#160;&#160;&#160;&#160;timer操作符默认在computation调度器上执行。有一个变体可以通过可选参数指定Scheduler。</string>
     <!-- 1. 创建操作 end -->
 
 </resources>

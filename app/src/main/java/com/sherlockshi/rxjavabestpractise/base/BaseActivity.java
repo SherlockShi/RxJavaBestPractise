@@ -1,9 +1,8 @@
-package com.sherlockshi.rxjavabestpractise;
+package com.sherlockshi.rxjavabestpractise.base;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,16 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sherlockshi.rxjavabestpractise.R;
+
 /**
  * Author: SherlockShi
  * Date:   2016-09-17 21:48
  * Description:
  */
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     private NestedScrollView contentView = null;
     protected Toolbar mToolbar;
-    protected FloatingActionButton fab;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,20 +47,6 @@ public class BaseActivity extends AppCompatActivity {
                     onBackPressed();
                 }
             });
-
-            fab = (FloatingActionButton) findViewById(R.id.fab);
         }
-    }
-
-    protected void hideFab() {
-        fab.setVisibility(View.GONE);
-    }
-
-    protected void showFab() {
-        fab.setVisibility(View.VISIBLE);
-    }
-
-    protected FloatingActionButton getFab() {
-        return fab;
     }
 }

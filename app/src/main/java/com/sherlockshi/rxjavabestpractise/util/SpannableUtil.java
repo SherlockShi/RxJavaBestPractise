@@ -6,6 +6,8 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
 
+import static android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE;
+
 /**
  * Author: SherlockShi
  * Date:   2016-09-17 21:28
@@ -13,13 +15,17 @@ import android.widget.TextView;
  */
 public class SpannableUtil {
 
-    public static void setPartialTextOtherColor(TextView textView, int start, int count, int color) {
+    public static void setMethodNameRed(TextView textView, int start, int count, int color) {
         Spannable spannable = new SpannableString(textView.getText());
-        spannable.setSpan(new ForegroundColorSpan(color), start, start+count, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannable.setSpan(new ForegroundColorSpan(color), start, start+count, SPAN_EXCLUSIVE_EXCLUSIVE);
         textView.setText(spannable);
     }
 
-    public static void setPartialTextOtherColor(TextView textView, int start, int end) {
+    public static void setMethodNameRed(TextView textView, int start, int end) throws IndexOutOfBoundsException {
+        if (start < 0 || end < 0) {
+            throw new IndexOutOfBoundsException();
+        }
+
         Spannable spannable = new SpannableString(textView.getText());
         spannable.setSpan(new ForegroundColorSpan(Color.RED), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         textView.setText(spannable);

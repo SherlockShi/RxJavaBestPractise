@@ -1,15 +1,16 @@
-package com.sherlockshi.rxjavabestpractise.activity;
+package com.sherlockshi.rxjavabestpractise.activity.category9_backpressure_operators;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import com.sherlockshi.rxjavabestpractise.base.BaseOperatorListActivity;
 
 /**
  * Author: SherlockShi
  * Date:   2016-09-16 20:31
  * Description:
  */
-public class Category9BackpressureOperatorsActivity extends AppCompatActivity {
+public class Category9BackpressureOperatorsActivity extends BaseOperatorListActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
