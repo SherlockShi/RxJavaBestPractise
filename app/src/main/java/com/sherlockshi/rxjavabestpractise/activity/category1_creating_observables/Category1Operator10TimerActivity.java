@@ -24,7 +24,7 @@ public class Category1Operator10TimerActivity extends BaseOperatorSampleActivity
 
     @Override
     protected String getDescription() {
-        return getString(R.string.activity_category1_creating_observables_10_timer_repeat_description);
+        return getString(R.string.activity_category1_creating_observables_10_timer_description);
     }
 
     @Override

@@ -87,17 +87,55 @@
         \n&#160;&#160;&#160;&#160;repeat操作符默认在trampoline调度器上执行。有一个变体可以通过可选参数指定Scheduler。</string>
 
     <string name="activity_category1_creating_observables_9_start">1.9 start</string>
-    <string name="activity_category1_creating_observables_9_start_repeat_description">&#160;&#160;&#160;&#160;返回一个Observable，它发射一个类似于函数声明的值。
+    <string name="activity_category1_creating_observables_9_start_description">&#160;&#160;&#160;&#160;返回一个Observable，它发射一个类似于函数声明的值。
         \n&#160;&#160;&#160;&#160;编程语言有很多种方法可以从运算结果中获取值，它们的名字一般叫functions, futures, actions, callables, runnables等等。在Start目录下的这组操作符可以让它们表现得像Observable，因此它们可以在Observables调用链中与其它Observable搭配使用。
         \n&#160;&#160;&#160;&#160;Start操作符的多种RxJava实现都属于可选的rxjava-async模块。
         \n&#160;&#160;&#160;&#160;rxjava-async模块包含start操作符，它接受一个函数作为参数，调用这个函数获取一个值，然后返回一个会发射这个值给后续观察者的Observable。
         \n&#160;&#160;&#160;&#160;注意：这个函数只会被执行一次，即使多个观察者订阅这个返回的Observable。</string>
 
     <string name="activity_category1_creating_observables_10_timer">1.10 timer</string>
-    <string name="activity_category1_creating_observables_10_timer_repeat_description">&#160;&#160;&#160;&#160;创建一个Observable，它在一个给定的延迟后发射一个特殊的值。
+    <string name="activity_category1_creating_observables_10_timer_description">&#160;&#160;&#160;&#160;创建一个Observable，它在一个给定的延迟后发射一个特殊的值。
         \n&#160;&#160;&#160;&#160;Timer操作符创建一个在给定的时间段之后返回一个特殊值的Observable。
         \n&#160;&#160;&#160;&#160;timer返回一个Observable，它在延迟一段给定的时间后发射一个简单的数字0。
         \n&#160;&#160;&#160;&#160;timer操作符默认在computation调度器上执行。有一个变体可以通过可选参数指定Scheduler。</string>
     <!-- 1. 创建操作 end -->
 
+    <!-- 2. 变换操作 start -->
+    <string name="activity_category2_transforming_observables_1_map">2.1 map</string>
+    <string name="activity_category2_transforming_observables_1_map_description">&#160;&#160;&#160;&#160;对Observable发射的每一项数据应用一个函数，执行变换操作。
+        \n&#160;&#160;&#160;&#160;Map操作符对原始Observable发射的每一项数据应用一个你选择的函数，然后返回一个发射这些结果的Observable。
+        \n&#160;&#160;&#160;&#160;这个操作符默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category2_transforming_observables_2_flatmap">2.2 flatMap</string>
+    <string name="activity_category2_transforming_observables_2_flatmap_description">&#160;&#160;&#160;&#160;FlatMap将一个发射数据的Observable变换为多个Observables，然后将它们发射的数据合并后放进一个单独的Observable。
+        \n&#160;&#160;&#160;&#160;FlatMap操作符使用一个指定的函数对原始Observable发射的每一项数据执行变换操作，这个函数返回一个本身也发射数据的Observable，然后FlatMap合并这些Observables发射的数据，最后将合并后的结果当做它自己的数据序列发射。
+        \n&#160;&#160;&#160;&#160;这个方法是很有用的，例如，当你有一个这样的Observable：它发射一个数据序列，这些数据本身包含Observable成员或者可以变换为Observable，因此你可以创建一个新的Observable发射这些次级Observable发射的数据的完整集合。
+        \n&#160;&#160;&#160;&#160;注意：FlatMap对这些Observables发射的数据做的是合并(merge)操作，因此它们可能是交错的。
+        \n&#160;&#160;&#160;&#160;在许多语言特定的实现中，还有一个操作符不会让变换后的Observables发射的数据交错，它按照严格的顺序发射这些数据，这个操作符通常被叫作ConcatMap或者类似的名字。
+        \n&#160;&#160;&#160;&#160;注意：如果任何一个通过这个flatMap操作产生的单独的Observable调用onError异常终止了，这个Observable自身会立即调用onError并终止。</string>
+
+    <string name="activity_category2_transforming_observables_3_scan">2.3 scan</string>
+    <string name="activity_category2_transforming_observables_3_scan_description">&#160;&#160;&#160;&#160;连续地对数据序列的每一项应用一个函数，然后连续发射结果。
+        \n&#160;&#160;&#160;&#160;Scan操作符对原始Observable发射的第一项数据应用一个函数，然后将那个函数的结果作为自己的第一项数据发射。它将函数的结果同第二项数据一起填充给这个函数来产生它自己的第二项数据。它持续进行这个过程来产生剩余的数据序列。这个操作符在某些情况下被叫做accumulator。</string>
+
+    <string name="activity_category2_transforming_observables_4_groupby">2.4 groupBy</string>
+    <string name="activity_category2_transforming_observables_4_groupby_description">&#160;&#160;&#160;&#160;将一个Observable分拆为一些Observables集合，它们中的每一个发射原始Observable的一个子序列。
+        \n&#160;&#160;&#160;&#160;GroupBy操作符将原始Observable分拆为一些Observables集合，它们中的每一个发射原始Observable数据序列的一个子序列。哪个数据项由哪一个Observable发射是由一个函数判定的，这个函数给每一项指定一个Key，Key相同的数据会被同一个Observable发射。
+        \n&#160;&#160;&#160;&#160;RxJava实现了groupBy操作符。它返回Observable的一个特殊子类GroupedObservable，实现了GroupedObservable接口的对象有一个额外的方法getKey，这个Key用于将数据分组到指定的Observable。
+        \n&#160;&#160;&#160;&#160;有一个版本的groupBy允许你传递一个变换函数，这样它可以在发射结果GroupedObservable之前改变数据项。
+        \n&#160;&#160;&#160;&#160;注意：groupBy将原始Observable分解为一个发射多个GroupedObservable的Observable，一旦有订阅，每个GroupedObservable就开始缓存数据。因此，如果你忽略这些GroupedObservable中的任何一个，这个缓存可能形成一个潜在的内存泄露。因此，如果你不想观察，也不要忽略GroupedObservable。你应该使用像take(0)这样会丢弃自己的缓存的操作符。
+        \n&#160;&#160;&#160;&#160;如果你取消订阅一个GroupedObservable，那个Observable将会终止。如果之后原始的Observable又发射了一个与这个Observable的Key匹配的数据，groupBy将会为这个Key创建一个新的GroupedObservable。
+        \n&#160;&#160;&#160;&#160;groupBy默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category2_transforming_observables_5_buffer">2.5 buffer</string>
+    <string name="activity_category2_transforming_observables_5_buffer_description">&#160;&#160;&#160;&#160;定期收集Observable的数据放进一个数据包裹，然后发射这些数据包裹，而不是一次发射一个值。
+        \n&#160;&#160;&#160;&#160;Buffer操作符将一个Observable变换为另一个，原来的Observable正常发射数据，变换产生的Observable发射这些数据的缓存集合。Buffer操作符在很多语言特定的实现中有很多种变体，它们在如何缓存这个问题上存在区别。
+        \n&#160;&#160;&#160;&#160;注意：如果原来的Observable发射了一个onError通知，Buffer会立即传递这个通知，而不是首先发射缓存的数据，即使在这之前缓存中包含了原始Observable发射的数据。
+        \n&#160;&#160;&#160;&#160;Window操作符与Buffer类似，但是它在发射之前把收集到的数据放进单独的Observable，而不是放进一个数据结构。</string>
+
+    <string name="activity_category2_transforming_observables_6_window">2.6 window</string>
+    <string name="activity_category2_transforming_observables_6_window_description">&#160;&#160;&#160;&#160;定期将来自原始Observable的数据分解为一个Observable窗口，发射这些窗口，而不是每次发射一项数据。
+        \n&#160;&#160;&#160;&#160;Window和Buffer类似，但不是发射来自原始Observable的数据包，它发射的是Observables，这些Observables中的每一个都发射原始Observable数据的一个子集，最后发射一个onCompleted通知。
+        \n&#160;&#160;&#160;&#160;和Buffer一样，Window有很多变体，每一种都以自己的方式将原始Observable分解为多个作为结果的Observable，每一个都包含一个映射原始数据的window。用Window操作符的术语描述就是，当一个窗口打开(when a window "opens")意味着一个新的Observable已经发射（产生）了，而且这个Observable开始发射来自原始Observable的数据；当一个窗口关闭(when a window "closes")意味着发射(产生)的Observable停止发射原始Observable的数据，并且发射终止通知onCompleted给它的观察者们。</string>
+    <!-- 2. 变换操作 end -->
 </resources>

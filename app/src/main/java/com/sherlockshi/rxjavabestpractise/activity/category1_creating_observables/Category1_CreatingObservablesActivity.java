@@ -13,7 +13,7 @@ import com.sherlockshi.rxjavabestpractise.R;
  * Date:   2016-09-16 20:21
  * Description:
  */
-public class Category1CreatingObservablesActivity extends BaseOperatorListActivity {
+public class Category1_CreatingObservablesActivity extends BaseOperatorListActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator1CreateActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator1CreateActivity.class));
+        startActivity(new Intent(this, Category1Operator1CreateActivity.class));
     }
 
     /**
@@ -35,7 +35,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator2DeferActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator2DeferActivity.class));
+        startActivity(new Intent(this, Category1Operator2DeferActivity.class));
     }
 
     /**
@@ -43,7 +43,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator31EmptyActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator3_1EmptyActivity.class));
+        startActivity(new Intent(this, Category1Operator3_1EmptyActivity.class));
     }
 
     /**
@@ -51,7 +51,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator32NeverActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator3_2NeverActivity.class));
+        startActivity(new Intent(this, Category1Operator3_2NeverActivity.class));
     }
 
     /**
@@ -59,7 +59,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator33ThrowActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator3_3ThrowActivity.class));
+        startActivity(new Intent(this, Category1Operator3_3ThrowActivity.class));
     }
 
     /**
@@ -67,7 +67,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator4FromActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator4FromActivity.class));
+        startActivity(new Intent(this, Category1Operator4FromActivity.class));
     }
 
     /**
@@ -75,7 +75,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator5IntervalActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator5IntervalActivity.class));
+        startActivity(new Intent(this, Category1Operator5IntervalActivity.class));
     }
 
     /**
@@ -83,7 +83,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator6JustActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator6JustActivity.class));
+        startActivity(new Intent(this, Category1Operator6JustActivity.class));
     }
 
     /**
@@ -91,7 +91,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator7RangeActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator7RangeActivity.class));
+        startActivity(new Intent(this, Category1Operator7RangeActivity.class));
     }
 
     /**
@@ -99,7 +99,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator8RepeatActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator8RepeatActivity.class));
+        startActivity(new Intent(this, Category1Operator8RepeatActivity.class));
     }
 
     /**
@@ -107,7 +107,7 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator9StartActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator9StartActivity.class));
+        startActivity(new Intent(this, Category1Operator9StartActivity.class));
     }
 
     /**
@@ -115,6 +115,6 @@ public class Category1CreatingObservablesActivity extends BaseOperatorListActivi
      * @param view
      */
     public void jumpToCategory1Operator10TimerActivity(View view) {
-        startActivity(new Intent(Category1CreatingObservablesActivity.this, Category1Operator10TimerActivity.class));
+        startActivity(new Intent(this, Category1Operator10TimerActivity.class));
     }
 }

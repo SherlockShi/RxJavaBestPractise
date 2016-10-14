@@ -16,49 +16,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.category1_creating_observables.Category1CreatingObservablesActivity"
+        <!-- 1. 创建操作 start -->
+        <activity android:name=".activity.category1_creating_observables.Category1_CreatingObservablesActivity"
             android:label="@string/activity_main_1_creating_observables"
             android:parentActivityName=".base.MainActivity">
-        </activity>
-
-        <activity android:name=".activity.category2_transforming_observables.Category2TransformingObservablesActivity"
-            android:label="@string/activity_main_2_transforming_observables">
-        </activity>
-
-        <activity android:name=".activity.category3_filtering_observables.Category3FilteringObservablesActivity"
-            android:label="@string/activity_main_3_filtering_observables">
-        </activity>
-
-        <activity android:name=".activity.category4_combining_observables.Category4CombiningObservablesActivity"
-            android:label="@string/activity_main_4_combining_observables">
-        </activity>
-
-        <activity android:name=".activity.category5_error_handling_operators.Category5ErrorHandlingOperatorsActivity"
-            android:label="@string/activity_main_5_error_handling_operators">
-        </activity>
-
-        <activity android:name=".activity.category6_observable_utility_operators.Category6ObservableUtilityOperatorsActivity"
-            android:label="@string/activity_main_6_observable_utility_operators">
-        </activity>
-
-        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7ConditionalAndBooleanOperatorsActivity"
-            android:label="@string/activity_main_7_conditional_and_boolean_operators">
-        </activity>
-
-        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8MathematicalAndAggregateOperatorsActivity"
-            android:label="@string/activity_main_8_mathematical_and_aggregate_operators">
-        </activity>
-
-        <activity android:name=".activity.category9_backpressure_operators.Category9BackpressureOperatorsActivity"
-            android:label="@string/activity_main_9_backpressure_operators">
-        </activity>
-
-        <activity android:name=".activity.category10_connectable_observable_operators.Category10ConnectableObservableOperatorsActivity"
-            android:label="@string/activity_main_10_connectable_observable_operators">
-        </activity>
-
-        <activity android:name=".activity.category11_operators_to_convert_observables.Category11OperatorsToConvertObservablesActivity"
-            android:label="@string/activity_main_11_operators_to_convert_observables">
         </activity>
 
         <activity android:name=".activity.category1_creating_observables.Category1Operator1CreateActivity"
@@ -107,6 +68,73 @@
 
         <activity android:name=".activity.category1_creating_observables.Category1Operator10TimerActivity"
             android:label="@string/activity_category1_creating_observables_10_timer">
+        </activity>
+        <!-- 1. 创建操作 end -->
+
+        <!-- 2. 变换操作 start -->
+        <activity android:name=".activity.category2_transforming_observables.Category2_TransformingObservablesActivity"
+            android:label="@string/activity_main_2_transforming_observables">
+        </activity>
+
+        <activity android:name=".activity.category2_transforming_observables.Category2Operator1MapActivity"
+            android:label="@string/activity_category2_transforming_observables_1_map">
+        </activity>
+
+        <activity android:name=".activity.category2_transforming_observables.Category2Operator2FlatMapActivity"
+            android:label="@string/activity_category2_transforming_observables_2_flatmap">
+        </activity>
+
+        <activity android:name=".activity.category2_transforming_observables.Category2Operator3ScanActivity"
+            android:label="@string/activity_category2_transforming_observables_3_scan">
+        </activity>
+
+        <activity android:name=".activity.category2_transforming_observables.Category2Operator4GroupByActivity"
+            android:label="@string/activity_category2_transforming_observables_4_groupby">
+        </activity>
+
+        <activity android:name=".activity.category2_transforming_observables.Category2Operator5BufferActivity"
+            android:label="@string/activity_category2_transforming_observables_5_buffer">
+        </activity>
+
+        <activity android:name=".activity.category2_transforming_observables.Category2Operator6WindowActivity"
+            android:label="@string/activity_category2_transforming_observables_6_window">
+        </activity>
+        <!-- 2. 变换操作 end -->
+
+        <activity android:name=".activity.category3_filtering_observables.Category3FilteringObservablesActivity"
+            android:label="@string/activity_main_3_filtering_observables">
+        </activity>
+
+        <activity android:name=".activity.category4_combining_observables.Category4CombiningObservablesActivity"
+            android:label="@string/activity_main_4_combining_observables">
+        </activity>
+
+        <activity android:name=".activity.category5_error_handling_operators.Category5ErrorHandlingOperatorsActivity"
+            android:label="@string/activity_main_5_error_handling_operators">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6ObservableUtilityOperatorsActivity"
+            android:label="@string/activity_main_6_observable_utility_operators">
+        </activity>
+
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7ConditionalAndBooleanOperatorsActivity"
+            android:label="@string/activity_main_7_conditional_and_boolean_operators">
+        </activity>
+
+        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8MathematicalAndAggregateOperatorsActivity"
+            android:label="@string/activity_main_8_mathematical_and_aggregate_operators">
+        </activity>
+
+        <activity android:name=".activity.category9_backpressure_operators.Category9BackpressureOperatorsActivity"
+            android:label="@string/activity_main_9_backpressure_operators">
+        </activity>
+
+        <activity android:name=".activity.category10_connectable_observable_operators.Category10ConnectableObservableOperatorsActivity"
+            android:label="@string/activity_main_10_connectable_observable_operators">
+        </activity>
+
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11OperatorsToConvertObservablesActivity"
+            android:label="@string/activity_main_11_operators_to_convert_observables">
         </activity>
     </application>
 

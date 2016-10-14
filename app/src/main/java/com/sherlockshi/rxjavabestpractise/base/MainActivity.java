@@ -9,8 +9,8 @@ import android.widget.Toast;
 import com.sherlockshi.rxjavabestpractise.R;
 import com.sherlockshi.rxjavabestpractise.activity.category10_connectable_observable_operators.Category10ConnectableObservableOperatorsActivity;
 import com.sherlockshi.rxjavabestpractise.activity.category11_operators_to_convert_observables.Category11OperatorsToConvertObservablesActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category1_creating_observables.Category1CreatingObservablesActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category2_transforming_observables.Category2TransformingObservablesActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category1_creating_observables.Category1_CreatingObservablesActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category2_transforming_observables.Category2_TransformingObservablesActivity;
 import com.sherlockshi.rxjavabestpractise.activity.category3_filtering_observables.Category3FilteringObservablesActivity;
 import com.sherlockshi.rxjavabestpractise.activity.category4_combining_observables.Category4CombiningObservablesActivity;
 import com.sherlockshi.rxjavabestpractise.activity.category5_error_handling_operators.Category5ErrorHandlingOperatorsActivity;
@@ -36,7 +36,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToCreatingObservablesActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category1CreatingObservablesActivity.class));
+        startActivity(new Intent(MainActivity.this, Category1_CreatingObservablesActivity.class));
     }
 
     /**
@@ -44,7 +44,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToTransformingObservablesActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category2TransformingObservablesActivity.class));
+        startActivity(new Intent(MainActivity.this, Category2_TransformingObservablesActivity.class));
     }
 
     /**

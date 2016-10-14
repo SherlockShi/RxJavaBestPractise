@@ -24,7 +24,7 @@ public class Category1Operator9StartActivity extends BaseOperatorSampleActivity 
 
     @Override
     protected String getDescription() {
-        return getString(R.string.activity_category1_creating_observables_9_start_repeat_description);
+        return getString(R.string.activity_category1_creating_observables_9_start_description);
     }
 
     @Override
