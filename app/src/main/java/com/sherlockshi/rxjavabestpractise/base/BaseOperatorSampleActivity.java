@@ -88,16 +88,29 @@ public abstract class BaseOperatorSampleActivity extends BaseActivity {
 
         tvSampleCode.setText(getSampleCode());
 
-        int startIndex = getSampleCode().indexOf(getOperatorName() + "(");
-        int endIndex = startIndex + getOperatorName().length();
+        for (int i = 0; i < getOperatorNames().length; i++) {
+            int startIndex = getSampleCode().indexOf(getOperatorNames()[i] + "(");
+            int endIndex = startIndex + getOperatorNames()[i].length();
 
-        try {
-            SpannableUtil.setMethodNameRed(tvSampleCode,
-                    startIndex,
-                    endIndex);
-        } catch (IndexOutOfBoundsException e) {
-            e.printStackTrace();
+            try {
+                SpannableUtil.setMethodNameRed(tvSampleCode,
+                        startIndex,
+                        endIndex);
+            } catch (IndexOutOfBoundsException e) {
+                e.printStackTrace();
+            }
         }
+
+//        int startIndex = getSampleCode().indexOf(getOperatorName() + "(");
+//        int endIndex = startIndex + getOperatorName().length();
+//
+//        try {
+//            SpannableUtil.setMethodNameRed(tvSampleCode,
+//                    startIndex,
+//                    endIndex);
+//        } catch (IndexOutOfBoundsException e) {
+//            e.printStackTrace();
+//        }
     }
 
     protected void showOutputInScreen() {
@@ -126,7 +139,13 @@ public abstract class BaseOperatorSampleActivity extends BaseActivity {
         return DEFAULT_IMAGE_HEIGHT;
     }
 
-    protected abstract String getOperatorName();
+    protected String getOperatorName() {
+        return "";
+    }
+
+    protected String[] getOperatorNames() {
+        return new String[]{getOperatorName()};
+    }
 
     protected abstract String getDescription();
 

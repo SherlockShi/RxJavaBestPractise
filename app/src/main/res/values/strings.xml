@@ -217,4 +217,46 @@
         \n&#160;&#160;&#160;&#160;如果你不关心一个Observable发射的数据，但是希望在它完成时或遇到错误终止时收到通知，你可以对Observable使用ignoreElements操作符，它会确保永远不会调用观察者的onNext()方法。
         \n&#160;&#160;&#160;&#160;ignoreElements默认不在任何特定的调度器上执行。</string>
     <!-- 3. 过滤操作 end -->
+
+    <!-- 4. 结合操作 start -->
+    <string name="activity_category4_combining_observables_1_start_with">4.1 startWith</string>
+    <string name="activity_category4_combining_observables_1_start_with_description">&#160;&#160;&#160;&#160;在数据序列的开头插入一条指定的项。
+        \n&#160;&#160;&#160;&#160;如果你想要一个Observable在发射数据之前先发射一个指定的数据序列，可以使用StartWith操作符。（如果你想一个Observable发射的数据末尾追加一个数据序列可以使用Concat操作符。）</string>
+
+    <string name="activity_category4_combining_observables_2_merge">4.2 merge</string>
+    <string name="activity_category4_combining_observables_2_merge_description">&#160;&#160;&#160;&#160;合并多个Observables的发射物。
+        \n&#160;&#160;&#160;&#160;使用Merge操作符你可以将多个Observables的输出合并，就好像它们是一个单个的Observable一样。
+        \n&#160;&#160;&#160;&#160;Merge可能会让合并的Observables发射的数据交错（有一个类似的操作符Concat不会让数据交错，它会按顺序一个接着一个发射多个Observables的发射物）。
+        \n&#160;&#160;&#160;&#160;正如图例上展示的，任何一个原始Observable的onError通知会被立即传递给观察者，而且会终止合并后的Observable。
+        \n&#160;&#160;&#160;&#160;在很多ReactiveX实现中还有一个叫MergeDelayError的操作符，它的行为有一点不同，它会保留onError通知直到合并后的Observable所有的数据发射完成，在那时它才会把onError传递给观察者。
+        \n&#160;&#160;&#160;&#160;除了传递多个Observable给merge，你还可以传递一个Observable列表List，数组，甚至是一个发射Observable序列的Observable，merge将合并它们的输出作为单个Observable的输出。
+        \n&#160;&#160;&#160;&#160;如果你传递一个发射Observables序列的Observable，你可以指定merge应该同时订阅的Observable的最大数量。一旦达到订阅数的限制，它将不再订阅原始Observable发射的任何其它Observable，直到某个已经订阅的Observable发射了onCompleted通知。
+        \n&#160;&#160;&#160;&#160;merge是静态方法，mergeWith是对象方法，举个例子，Observable.merge(odds,evens)等价于odds.mergeWith(evens)。
+        \n&#160;&#160;&#160;&#160;如果传递给merge的任何一个的Observable发射了onError通知终止了，merge操作符生成的Observable也会立即以onError通知终止。如果你想让它继续发射数据，在最后才报告错误，可以使用mergeDelayError。</string>
+
+    <string name="activity_category4_combining_observables_3_zip">4.3 zip</string>
+    <string name="activity_category4_combining_observables_3_zip_description">&#160;&#160;&#160;&#160;通过一个函数将多个Observables的发射物结合到一起，基于这个函数的结果为每个结合体发射单个数据项。
+        \n&#160;&#160;&#160;&#160;Zip操作符返回一个Obversable，它使用这个函数按顺序结合两个或多个Observables发射的数据项，然后它发射这个函数返回的结果。它按照严格的顺序应用这个函数。它只发射与发射数据项最少的那个Observable一样多的数据。
+        \n&#160;&#160;&#160;&#160;zip的最后一个参数接受每个Observable发射的一项数据，返回被压缩后的数据，它可以接受一到九个参数：一个Observable序列，或者一些发射Observable的Observables。</string>
+
+    <string name="activity_category4_combining_observables_4_and_then_when">4.4 and/then/when</string>
+    <string name="activity_category4_combining_observables_4_and_then_when_description">&#160;&#160;&#160;&#160;使用Pattern和Plan作为中介，将两个或多个Observable发射的数据集合并到一起。
+        \n&#160;&#160;&#160;&#160;And/Then/When操作符组合的行为类似于zip，但是它们使用一个中间数据结构。接受两个或多个Observable，一次一个将它们的发射物合并到Pattern对象，然后操作那个Pattern对象，变换为一个Plan。随后将这些Plan变换为Observable的发射物。
+        \n&#160;&#160;&#160;&#160;它们属于rxjava-joins模块，不是核心RxJava包的一部分。</string>
+
+    <string name="activity_category4_combining_observables_5_combine_latest">4.5 combineLatest</string>
+    <string name="activity_category4_combining_observables_5_combine_latest_description">&#160;&#160;&#160;&#160;当两个Observables中的任何一个发射了数据时，使用一个函数结合每个Observable发射的最近数据项，并且基于这个函数的结果发射数据。
+        \n&#160;&#160;&#160;&#160;CombineLatest操作符行为类似于zip，但是只有当原始的Observable中的每一个都发射了一条数据时zip才发射数据。CombineLatest则在原始的Observable中任意一个发射了数据时发射一条数据。当原始Observables的任何一个发射了一条数据时，CombineLatest使用一个函数结合它们最近发射的数据，然后发射这个函数的返回值。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为combineLatest，它接受二到九个Observable作为参数，或者单个Observables列表作为参数。它默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category4_combining_observables_6_join">4.6 join</string>
+    <string name="activity_category4_combining_observables_6_join_description">&#160;&#160;&#160;&#160;任何时候，只要在另一个Observable发射的数据定义的时间窗口内，这个Observable发射了一条数据，就结合两个Observable发射的数据。
+        \n&#160;&#160;&#160;&#160;Join操作符结合两个Observable发射的数据，基于时间窗口（你定义的针对每条数据特定的原则）选择待集合的数据项。你将这些时间窗口实现为一些Observables，它们的生命周期从任何一条Observable发射的每一条数据开始。当这个定义时间窗口的Observable发射了一条数据或者完成时，与这条数据关联的窗口也会关闭。只要这条数据的窗口是打开的，它将继续结合其它Observable发射的任何数据项。你定义一个用于结合数据的函数。
+        \n&#160;&#160;&#160;&#160;join默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category4_combining_observables_7_switch">4.7 switch</string>
+    <string name="activity_category4_combining_observables_7_switch_description">&#160;&#160;&#160;&#160;将一个发射多个Observables的Observable转换成另一个单独的Observable，后者发射那些Observables最近发射的数据项。
+        \n&#160;&#160;&#160;&#160;Switch订阅一个发射多个Observables的Observable。它每次观察那些Observables中的一个，Switch返回的这个Observable取消订阅前一个发射数据的Observable，开始发射最近的Observable发射的数据。注意：当原始Observable发射了一个新的Observable时（不是这个新的Observable发射了一条数据时），它将取消订阅之前的那个Observable。这意味着，在后来那个Observable产生之后到它开始发射数据之前的这段时间里，前一个Observable发射的数据将被丢弃（就像图例上的那个黄色圆圈一样）。
+        \n&#160;&#160;&#160;&#160;Java将这个操作符实现为switchOnNext。它默认不在任何特定的调度器上执行。</string>
+    <!-- 4. 结合操作 end -->
 </resources>

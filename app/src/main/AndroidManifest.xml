@@ -155,9 +155,39 @@
         </activity>
         <!-- 3. 过滤操作 end -->
 
+        <!-- 4. 组合操作 start -->
         <activity android:name=".activity.category4_combining_observables.Category4_CombiningObservablesActivity"
             android:label="@string/activity_main_4_combining_observables">
         </activity>
+
+        <activity android:name=".activity.category4_combining_observables.Category4Operator1StartWithActivity"
+            android:label="@string/activity_category4_combining_observables_1_start_with">
+        </activity>
+
+        <activity android:name=".activity.category4_combining_observables.Category4Operator2MergeActivity"
+            android:label="@string/activity_category4_combining_observables_2_merge">
+        </activity>
+
+        <activity android:name=".activity.category4_combining_observables.Category4Operator3ZipActivity"
+            android:label="@string/activity_category4_combining_observables_3_zip">
+        </activity>
+
+        <activity android:name=".activity.category4_combining_observables.Category4Operator4AndThenWhenActivity"
+            android:label="@string/activity_category4_combining_observables_4_and_then_when">
+        </activity>
+
+        <activity android:name=".activity.category4_combining_observables.Category4Operator5CombineLatestActivity"
+            android:label="@string/activity_category4_combining_observables_5_combine_latest">
+        </activity>
+
+        <activity android:name=".activity.category4_combining_observables.Category4Operator6JoinActivity"
+            android:label="@string/activity_category4_combining_observables_6_join">
+        </activity>
+
+        <activity android:name=".activity.category4_combining_observables.Category4Operator7SwitchActivity"
+            android:label="@string/activity_category4_combining_observables_7_switch">
+        </activity>
+        <!-- 4. 组合操作 end -->
 
         <activity android:name=".activity.category5_error_handling_operators.Category5_ErrorHandlingOperatorsActivity"
             android:label="@string/activity_main_5_error_handling_operators">

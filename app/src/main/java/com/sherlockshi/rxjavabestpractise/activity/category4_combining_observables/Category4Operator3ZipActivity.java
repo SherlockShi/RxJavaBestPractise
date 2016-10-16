@@ -1,4 +1,4 @@
-package com.sherlockshi.rxjavabestpractise.activity.category3_filtering_observables;
+package com.sherlockshi.rxjavabestpractise.activity.category4_combining_observables;
 
 import com.sherlockshi.rxjavabestpractise.R;
 import com.sherlockshi.rxjavabestpractise.base.BaseOperatorSampleActivity;
@@ -8,39 +8,47 @@ import java.util.List;
 
 import rx.Observable;
 import rx.Subscriber;
+import rx.functions.Func2;
 
 /**
  * Author: SherlockShi
- * Date:   2016-10-16 09:46
+ * Date:   2016-10-16 11:25
  * Description:
  */
-public class Category3Operator11DistinctActivity extends BaseOperatorSampleActivity {
+public class Category4Operator3ZipActivity extends BaseOperatorSampleActivity {
 
     @Override
     protected String getOperatorName() {
-        return "distinct";
+        return "zip";
     }
 
     @Override
     protected String getDescription() {
-        return getString(R.string.activity_category3_filtering_observables_11_distinct_description);
+        return getString(R.string.activity_category4_combining_observables_3_zip_description);
     }
 
     @Override
     protected int getImageResourceId() {
-        return R.drawable.c11_distinct;
+        return R.drawable.d3_zip;
     }
 
     @Override
     protected int setImageHeight() {
-        return 200;
+        return 230;
     }
 
     @Override
     protected void runSampleCode() {
-        Observable.just(1, 2, 1, 1, 2, 3)
-                .distinct()
-                .subscribe(new Subscriber<Integer>() {
+        Observable just11 = Observable.just("A", "B");
+        Observable just21 = Observable.just(1, 2, 3);
+
+        Observable.zip(just11, just21, new Func2<String, Integer, String>() {
+            @Override
+            public String call(String string, Integer integer) {
+                return string + integer;
+            }
+        })
+                .subscribe(new Subscriber<String>() {
                     @Override
                     public void onCompleted() {
                         System.out.println("onCompleted.");
@@ -52,17 +60,24 @@ public class Category3Operator11DistinctActivity extends BaseOperatorSampleActiv
                     }
 
                     @Override
-                    public void onNext(Integer integer) {
-                        System.out.println("onNext: " + integer);
+                    public void onNext(String s) {
+                        System.out.println("onNext: " + s);
                     }
                 });
     }
 
     @Override
     protected String getSampleCode() {
-        return "Observable.just(1, 2, 1, 1, 2, 3)\n" +
-                "        .distinct()\n" +
-                "        .subscribe(new Subscriber<Integer>() {\n" +
+        return "Observable just11 = Observable.just(\"A\", \"B\");\n" +
+                "Observable just21 = Observable.just(1, 2, 3);\n" +
+                "\n" +
+                "Observable.zip(just11, just21, new Func2<String, Integer, String>() {\n" +
+                "    @Override\n" +
+                "    public String call(String string, Integer integer) {\n" +
+                "        return string + integer;\n" +
+                "    }\n" +
+                "})\n" +
+                "        .subscribe(new Subscriber<String>() {\n" +
                 "            @Override\n" +
                 "            public void onCompleted() {\n" +
                 "                System.out.println(\"onCompleted.\");\n" +
@@ -70,12 +85,12 @@ public class Category3Operator11DistinctActivity extends BaseOperatorSampleActiv
                 "\n" +
                 "            @Override\n" +
                 "            public void onError(Throwable e) {\n" +
-                "                System.out.println(\"onError:\" + e.getMessage());\n" +
+                "                System.out.println(\"onError: \" + e.getMessage());\n" +
                 "            }\n" +
                 "\n" +
                 "            @Override\n" +
-                "            public void onNext(Integer integer) {\n" +
-                "                System.out.println(\"onNext:\" + integer);\n" +
+                "            public void onNext(String s) {\n" +
+                "                System.out.println(\"onNext: \" + s);\n" +
                 "            }\n" +
                 "        });";
     }
@@ -83,9 +98,8 @@ public class Category3Operator11DistinctActivity extends BaseOperatorSampleActiv
     @Override
     protected List<String> getOutputList() {
         List<String> output = new ArrayList<String>();
-        output.add("onNext: 1");
-        output.add("\nonNext: 2");
-        output.add("\nonNext: 3");
+        output.add("onNext: A1");
+        output.add("\nonNext: B2");
         output.add("\nonCompleted.");
 
         return output;

@@ -68,12 +68,12 @@ public class Category3Operator10DebounceActivity extends BaseOperatorSampleActiv
 
                     @Override
                     public void onError(Throwable e) {
-                        System.out.println("onError:" + e.getMessage());
+                        System.out.println("onError: " + e.getMessage());
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        System.out.println("onNext:" + integer);
+                        System.out.println("onNext: " + integer);
                     }
                 });
 
