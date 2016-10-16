@@ -8,92 +8,92 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/button_margin"
         android:orientation="vertical"
+        android:paddingBottom="@dimen/button_margin"
         tools:context="com.sherlockshi.rxjavapractise.MainActivity">
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_1_create"
-            android:onClick="jumpToCategory1Operator1CreateActivity"/>
+            android:onClick="jumpToCategory1Operator1CreateActivity"
+            android:text="@string/activity_category1_creating_observables_1_create" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_2_defer"
-            android:onClick="jumpToCategory1Operator2DeferActivity"/>
+            android:onClick="jumpToCategory1Operator2DeferActivity"
+            android:text="@string/activity_category1_creating_observables_2_defer" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_31_empty"
-            android:onClick="jumpToCategory1Operator31EmptyActivity"/>
+            android:onClick="jumpToCategory1Operator31EmptyActivity"
+            android:text="@string/activity_category1_creating_observables_31_empty" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_32_never"
-            android:onClick="jumpToCategory1Operator32NeverActivity"/>
+            android:onClick="jumpToCategory1Operator32NeverActivity"
+            android:text="@string/activity_category1_creating_observables_32_never" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_33_throw"
-            android:onClick="jumpToCategory1Operator33ThrowActivity"/>
+            android:onClick="jumpToCategory1Operator33ThrowActivity"
+            android:text="@string/activity_category1_creating_observables_33_throw" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_4_from"
-            android:onClick="jumpToCategory1Operator4FromActivity"/>
+            android:onClick="jumpToCategory1Operator4FromActivity"
+            android:text="@string/activity_category1_creating_observables_4_from" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_5_interval"
-            android:onClick="jumpToCategory1Operator5IntervalActivity"/>
+            android:onClick="jumpToCategory1Operator5IntervalActivity"
+            android:text="@string/activity_category1_creating_observables_5_interval" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_6_just"
-            android:onClick="jumpToCategory1Operator6JustActivity"/>
+            android:onClick="jumpToCategory1Operator6JustActivity"
+            android:text="@string/activity_category1_creating_observables_6_just" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_7_range"
-            android:onClick="jumpToCategory1Operator7RangeActivity"/>
+            android:onClick="jumpToCategory1Operator7RangeActivity"
+            android:text="@string/activity_category1_creating_observables_7_range" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_8_repeat"
-            android:onClick="jumpToCategory1Operator8RepeatActivity"/>
+            android:onClick="jumpToCategory1Operator8RepeatActivity"
+            android:text="@string/activity_category1_creating_observables_8_repeat" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_9_start"
-            android:onClick="jumpToCategory1Operator9StartActivity"/>
+            android:onClick="jumpToCategory1Operator9StartActivity"
+            android:text="@string/activity_category1_creating_observables_9_start" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category1_creating_observables_10_timer"
-            android:onClick="jumpToCategory1Operator10TimerActivity"/>
+            android:onClick="jumpToCategory1Operator10TimerActivity"
+            android:text="@string/activity_category1_creating_observables_10_timer" />
     </LinearLayout>
 </ScrollView>

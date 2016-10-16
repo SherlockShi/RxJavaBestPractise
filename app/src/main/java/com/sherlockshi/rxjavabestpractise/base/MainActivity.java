@@ -7,17 +7,17 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.sherlockshi.rxjavabestpractise.R;
-import com.sherlockshi.rxjavabestpractise.activity.category10_connectable_observable_operators.Category10ConnectableObservableOperatorsActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category11_operators_to_convert_observables.Category11OperatorsToConvertObservablesActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category10_connectable_observable_operators.Category10_ConnectableObservableOperatorsActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category11_operators_to_convert_observables.Category11_OperatorsToConvertObservablesActivity;
 import com.sherlockshi.rxjavabestpractise.activity.category1_creating_observables.Category1_CreatingObservablesActivity;
 import com.sherlockshi.rxjavabestpractise.activity.category2_transforming_observables.Category2_TransformingObservablesActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category3_filtering_observables.Category3FilteringObservablesActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category4_combining_observables.Category4CombiningObservablesActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category5_error_handling_operators.Category5ErrorHandlingOperatorsActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category6_observable_utility_operators.Category6ObservableUtilityOperatorsActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category7_conditional_and_boolean_operators.Category7ConditionalAndBooleanOperatorsActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category8_mathematical_and_aggregate_operators.Category8MathematicalAndAggregateOperatorsActivity;
-import com.sherlockshi.rxjavabestpractise.activity.category9_backpressure_operators.Category9BackpressureOperatorsActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category3_filtering_observables.Category3_FilteringObservablesActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category4_combining_observables.Category4_CombiningObservablesActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category5_error_handling_operators.Category5_ErrorHandlingOperatorsActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category6_observable_utility_operators.Category6_ObservableUtilityOperatorsActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category7_conditional_and_boolean_operators.Category7_ConditionalAndBooleanOperatorsActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category8_mathematical_and_aggregate_operators.Category8_MathematicalAndAggregateOperatorsActivity;
+import com.sherlockshi.rxjavabestpractise.activity.category9_backpressure_operators.Category9_BackpressureOperatorsActivity;
 
 public class MainActivity extends BaseOperatorListActivity {
 
@@ -52,7 +52,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToFilteringObservablesActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category3FilteringObservablesActivity.class));
+        startActivity(new Intent(MainActivity.this, Category3_FilteringObservablesActivity.class));
     }
 
     /**
@@ -60,7 +60,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToCombiningObservablesActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category4CombiningObservablesActivity.class));
+        startActivity(new Intent(MainActivity.this, Category4_CombiningObservablesActivity.class));
     }
 
     /**
@@ -68,7 +68,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToErrorHandlingOperatorsActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category5ErrorHandlingOperatorsActivity.class));
+        startActivity(new Intent(MainActivity.this, Category5_ErrorHandlingOperatorsActivity.class));
     }
 
     /**
@@ -76,7 +76,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToObservableUtilityOperatorsActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category6ObservableUtilityOperatorsActivity.class));
+        startActivity(new Intent(MainActivity.this, Category6_ObservableUtilityOperatorsActivity.class));
     }
 
     /**
@@ -84,7 +84,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToConditionalAndBooleanOperatorsActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category7ConditionalAndBooleanOperatorsActivity.class));
+        startActivity(new Intent(MainActivity.this, Category7_ConditionalAndBooleanOperatorsActivity.class));
     }
 
     /**
@@ -92,7 +92,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToMathematicalAndAggregateOperatorsActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category8MathematicalAndAggregateOperatorsActivity.class));
+        startActivity(new Intent(MainActivity.this, Category8_MathematicalAndAggregateOperatorsActivity.class));
     }
 
     /**
@@ -100,7 +100,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToBackpressureOperatorsActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category9BackpressureOperatorsActivity.class));
+        startActivity(new Intent(MainActivity.this, Category9_BackpressureOperatorsActivity.class));
     }
 
     /**
@@ -108,7 +108,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToConnectableObservableOperatorsActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category10ConnectableObservableOperatorsActivity.class));
+        startActivity(new Intent(MainActivity.this, Category10_ConnectableObservableOperatorsActivity.class));
     }
 
     /**
@@ -116,7 +116,7 @@ public class MainActivity extends BaseOperatorListActivity {
      * @param view
      */
     public void jumpToOperatorsToConvertObservablesActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Category11OperatorsToConvertObservablesActivity.class));
+        startActivity(new Intent(MainActivity.this, Category11_OperatorsToConvertObservablesActivity.class));
     }
 
     private long exitTime = 0;

@@ -8,85 +8,85 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/button_margin"
         android:orientation="vertical"
+        android:paddingBottom="@dimen/button_margin"
         tools:context="com.sherlockshi.rxjavapractise.MainActivity">
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_1_creating_observables"
-            android:onClick="jumpToCreatingObservablesActivity"/>
+            android:onClick="jumpToCreatingObservablesActivity"
+            android:text="@string/activity_main_1_creating_observables" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_2_transforming_observables"
-            android:onClick="jumpToTransformingObservablesActivity"/>
+            android:onClick="jumpToTransformingObservablesActivity"
+            android:text="@string/activity_main_2_transforming_observables" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_3_filtering_observables"
-            android:onClick="jumpToFilteringObservablesActivity"/>
+            android:onClick="jumpToFilteringObservablesActivity"
+            android:text="@string/activity_main_3_filtering_observables" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_4_combining_observables"
-            android:onClick="jumpToCombiningObservablesActivity"/>
+            android:onClick="jumpToCombiningObservablesActivity"
+            android:text="@string/activity_main_4_combining_observables" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_5_error_handling_operators"
-            android:onClick="jumpToErrorHandlingOperatorsActivity"/>
+            android:onClick="jumpToErrorHandlingOperatorsActivity"
+            android:text="@string/activity_main_5_error_handling_operators" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_6_observable_utility_operators"
-            android:onClick="jumpToObservableUtilityOperatorsActivity"/>
+            android:onClick="jumpToObservableUtilityOperatorsActivity"
+            android:text="@string/activity_main_6_observable_utility_operators" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_7_conditional_and_boolean_operators"
-            android:onClick="jumpToConditionalAndBooleanOperatorsActivity"/>
+            android:onClick="jumpToConditionalAndBooleanOperatorsActivity"
+            android:text="@string/activity_main_7_conditional_and_boolean_operators" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_8_mathematical_and_aggregate_operators"
-            android:onClick="jumpToMathematicalAndAggregateOperatorsActivity"/>
+            android:onClick="jumpToMathematicalAndAggregateOperatorsActivity"
+            android:text="@string/activity_main_8_mathematical_and_aggregate_operators" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_9_backpressure_operators"
-            android:onClick="jumpToBackpressureOperatorsActivity"/>
+            android:onClick="jumpToBackpressureOperatorsActivity"
+            android:text="@string/activity_main_9_backpressure_operators" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_10_connectable_observable_operators"
-            android:onClick="jumpToConnectableObservableOperatorsActivity"/>
+            android:onClick="jumpToConnectableObservableOperatorsActivity"
+            android:text="@string/activity_main_10_connectable_observable_operators" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_main_11_operators_to_convert_observables"
-            android:onClick="jumpToOperatorsToConvertObservablesActivity"/>
+            android:onClick="jumpToOperatorsToConvertObservablesActivity"
+            android:text="@string/activity_main_11_operators_to_convert_observables" />
     </LinearLayout>
 </ScrollView>

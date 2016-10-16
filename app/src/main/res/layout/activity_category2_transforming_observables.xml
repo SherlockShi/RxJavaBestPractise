@@ -8,50 +8,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/button_margin"
         android:orientation="vertical"
+        android:paddingBottom="@dimen/button_margin"
         tools:context="com.sherlockshi.rxjavapractise.MainActivity">
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category2_transforming_observables_1_map"
-            android:onClick="jumpToCategory2Operator1MapActivity"/>
+            android:onClick="jumpToCategory2Operator1MapActivity"
+            android:text="@string/activity_category2_transforming_observables_1_map" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category2_transforming_observables_2_flatmap"
-            android:onClick="jumpToCategory2Operator2FlatMapActivity"/>
+            android:onClick="jumpToCategory2Operator2FlatMapActivity"
+            android:text="@string/activity_category2_transforming_observables_2_flatmap" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category2_transforming_observables_3_scan"
-            android:onClick="jumpToCategory2Operator3ScanActivity"/>
+            android:onClick="jumpToCategory2Operator3ScanActivity"
+            android:text="@string/activity_category2_transforming_observables_3_scan" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category2_transforming_observables_4_groupby"
-            android:onClick="jumpToCategory2Operator4GroupByActivity"/>
+            android:onClick="jumpToCategory2Operator4GroupByActivity"
+            android:text="@string/activity_category2_transforming_observables_4_groupby" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category2_transforming_observables_5_buffer"
-            android:onClick="jumpToCategory2Operator1BufferActivity"/>
+            android:onClick="jumpToCategory2Operator1BufferActivity"
+            android:text="@string/activity_category2_transforming_observables_5_buffer" />
 
         <Button
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/activity_category2_transforming_observables_6_window"
-            android:onClick="jumpToCategory2Operator6WindowActivity"/>
+            android:onClick="jumpToCategory2Operator6WindowActivity"
+            android:text="@string/activity_category2_transforming_observables_6_window" />
     </LinearLayout>
 </ScrollView>

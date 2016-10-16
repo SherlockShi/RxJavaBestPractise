@@ -16,7 +16,7 @@
     <string name="activity_main_6_observable_utility_operators">6. 辅助操作</string>
     <string name="activity_main_7_conditional_and_boolean_operators">7. 条件和布尔操作</string>
     <string name="activity_main_8_mathematical_and_aggregate_operators">8. 算术和聚合操作</string>
-    <string name="activity_main_9_backpressure_operators">9. </string>
+    <string name="activity_main_9_backpressure_operators">9. 反压操作</string>
     <string name="activity_main_10_connectable_observable_operators">10. 连接操作</string>
     <string name="activity_main_11_operators_to_convert_observables">11. 转换操作</string>
 
@@ -138,4 +138,83 @@
         \n&#160;&#160;&#160;&#160;Window和Buffer类似，但不是发射来自原始Observable的数据包，它发射的是Observables，这些Observables中的每一个都发射原始Observable数据的一个子集，最后发射一个onCompleted通知。
         \n&#160;&#160;&#160;&#160;和Buffer一样，Window有很多变体，每一种都以自己的方式将原始Observable分解为多个作为结果的Observable，每一个都包含一个映射原始数据的window。用Window操作符的术语描述就是，当一个窗口打开(when a window "opens")意味着一个新的Observable已经发射（产生）了，而且这个Observable开始发射来自原始Observable的数据；当一个窗口关闭(when a window "closes")意味着发射(产生)的Observable停止发射原始Observable的数据，并且发射终止通知onCompleted给它的观察者们。</string>
     <!-- 2. 变换操作 end -->
+
+    <!-- 3. 过滤操作 start -->
+    <string name="activity_category3_filtering_observables_1_filter">3.1 filter</string>
+    <string name="activity_category3_filtering_observables_1_filter_description">&#160;&#160;&#160;&#160;只发射通过了谓词测试的数据项。
+        \n&#160;&#160;&#160;&#160;Filter操作符使用你指定的一个谓词函数测试数据项，只有通过测试的数据才会被发射。
+        \n&#160;&#160;&#160;&#160;filter默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category3_filtering_observables_2_take_last">3.2 takeLast</string>
+    <string name="activity_category3_filtering_observables_2_take_last_description">&#160;&#160;&#160;&#160;发射Observable发射的最后N项数据。
+        \n&#160;&#160;&#160;&#160;使用TakeLast操作符修改原始Observable，你可以只发射Observable发射的后N项数据，忽略前面的数据。
+        \n&#160;&#160;&#160;&#160;使用takeLast操作符，你可以只发射原始Observable发射的后N项数据，忽略之前的数据。注意：这会延迟原始Observable发射的任何数据项，直到它全部完成。
+        \n&#160;&#160;&#160;&#160;takeLast的这个变体默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category3_filtering_observables_3_last">3.3 last</string>
+    <string name="activity_category3_filtering_observables_3_last_description">&#160;&#160;&#160;&#160;只发射最后一项（或者满足某个条件的最后一项）数据。
+        \n&#160;&#160;&#160;&#160;如果你只对Observable发射的最后一项数据，或者满足某个条件的最后一项数据感兴趣，你可以使用Last操作符。
+        \n&#160;&#160;&#160;&#160;在某些实现中，Last没有实现为一个返回Observable的过滤操作符，而是实现为一个在当时就发射原始Observable指定数据项的阻塞函数。在这些实现中，如果你想要的是一个过滤操作符，最好使用TakeLast(1)。
+        \n&#160;&#160;&#160;&#160;在RxJava中的实现是last和lastOrDefault。
+        \n&#160;&#160;&#160;&#160;可能容易混淆，BlockingObservable也有名叫last和lastOrDefault的操作符，它们会阻塞并返回值，不是立即返回一个Observable。
+        \n&#160;&#160;&#160;&#160;只发射最后一项数据，使用没有参数的last操作符。</string>
+
+    <string name="activity_category3_filtering_observables_4_skip">3.4 skip</string>
+    <string name="activity_category3_filtering_observables_4_skip_description">&#160;&#160;&#160;&#160;抑制Observable发射的前N项数据。
+        \n&#160;&#160;&#160;&#160;使用Skip操作符，你可以忽略Observable发射的前N项数据，只保留之后的数据。
+        \n&#160;&#160;&#160;&#160;skip的这个变体默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category3_filtering_observables_5_skip_last">3.5 skipLast</string>
+    <string name="activity_category3_filtering_observables_5_skip_last_description">&#160;&#160;&#160;&#160;抑制Observable发射的后N项数据。
+        \n&#160;&#160;&#160;&#160;使用SkipLast操作符修改原始Observable，你可以忽略Observable发射的后N项数据，只保留前面的数据。
+        \n&#160;&#160;&#160;&#160;使用SkipLast操作符，你可以忽略原始Observable发射的后N项数据，只保留之前的数据。注意：这个机制是这样实现的：延迟原始Observable发射的任何数据项，直到它发射了N项数据。
+        \n&#160;&#160;&#160;&#160;skipLast的这个变体默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category3_filtering_observables_6_take">3.6 take</string>
+    <string name="activity_category3_filtering_observables_6_take_description">&#160;&#160;&#160;&#160;只发射前面的N项数据。
+        \n&#160;&#160;&#160;&#160;使用Take操作符让你可以修改Observable的行为，只返回前面的N项数据，然后发射完成通知，忽略剩余的数据。
+        \n&#160;&#160;&#160;&#160;如果你对一个Observable使用take(n)（或它的同义词limit(n)）操作符，而那个Observable发射的数据少于N项，那么take操作生成的Observable不会抛异常或发射onError通知，在完成前它只会发射相同的少量数据。
+        \n&#160;&#160;&#160;&#160;take(int)默认不任何特定的调度器上执行。</string>
+
+    <string name="activity_category3_filtering_observables_7_first">3.7 first</string>
+    <string name="activity_category3_filtering_observables_7_first_description">&#160;&#160;&#160;&#160;只发射第一项（或者满足某个条件的第一项）数据。
+        \n&#160;&#160;&#160;&#160;如果你只对Observable发射的第一项数据，或者满足某个条件的第一项数据感兴趣，你可以使用First操作符。
+        \n&#160;&#160;&#160;&#160;在某些实现中，First没有实现为一个返回Observable的过滤操作符，而是实现为一个在当时就发射原始Observable指定数据项的阻塞函数。在这些实现中，如果你想要的是一个过滤操作符，最好使用Take(1)或者ElementAt(0)。
+        \n&#160;&#160;&#160;&#160;在一些实现中还有一个Single操作符。它的行为与First类似，但为了确保只发射单个值，它会等待原始Observable终止（否则，不是发射那个值，而是以一个错误通知终止）。你可以使用它从原始Observable获取第一项数据，而且也确保只发射一项数据。
+        \n&#160;&#160;&#160;&#160;在RxJava中，这个操作符被实现为first，firstOrDefault和takeFirst。
+        \n&#160;&#160;&#160;&#160;可能容易混淆，BlockingObservable也有名叫first和firstOrDefault的操作符，它们会阻塞并返回值，不是立即返回一个Observable。
+        \n&#160;&#160;&#160;&#160;还有几个其它的操作符执行类似的功能。</string>
+
+    <string name="activity_category3_filtering_observables_8_element_at">3.8 elementAt</string>
+    <string name="activity_category3_filtering_observables_8_element_at_description">&#160;&#160;&#160;&#160;只发射第N项数据。
+        \n&#160;&#160;&#160;&#160;ElementAt操作符获取原始Observable发射的数据序列指定索引位置的数据项，然后当做自己的唯一数据发射。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为elementAt，给它传递一个基于0的索引值，它会发射原始Observable数据序列对应索引位置的值，如果你传递给elementAt的值为5，那么它会发射第六项的数据。
+        \n&#160;&#160;&#160;&#160;如果你传递的是一个负数，或者原始Observable的数据项数小于index+1，将会抛出一个IndexOutOfBoundsException异常。</string>
+
+    <string name="activity_category3_filtering_observables_9_sample">3.9 sample</string>
+    <string name="activity_category3_filtering_observables_9_sample_description">&#160;&#160;&#160;&#160;定期发射Observable最近发射的数据项。
+        \n&#160;&#160;&#160;&#160;Sample操作符定时查看一个Observable，然后发射自上次采样以来它最近发射的数据。
+        \n&#160;&#160;&#160;&#160;在某些实现中，有一个ThrottleFirst操作符的功能类似，但不是发射采样期间的最近的数据，而是发射在那段时间内的第一项数据。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为sample和throttleLast。
+        \n&#160;&#160;&#160;&#160;注意：如果自上次采样以来，原始Observable没有发射任何数据，这个操作返回的Observable在那段时间内也不会发射任何数据。
+        \n&#160;&#160;&#160;&#160;sample(别名throttleLast)的一个变体按照你参数中指定的时间间隔定时采样（TimeUnit指定时间单位）。
+        \n&#160;&#160;&#160;&#160;sample的这个变体默认在computation调度器上执行，但是你可以使用第三个参数指定其它的调度器。</string>
+
+    <string name="activity_category3_filtering_observables_10_debounce">3.10 debounce</string>
+    <string name="activity_category3_filtering_observables_10_debounce_description">&#160;&#160;&#160;&#160;仅在过了一段指定的时间还没发射数据时才发射一个数据。
+        \n&#160;&#160;&#160;&#160;Debounce操作符会过滤掉发射速率过快的数据项。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为throttleWithTimeout和debounce。
+        \n&#160;&#160;&#160;&#160;注意：这个操作符会会接着最后一项数据发射原始Observable的onCompleted通知，即使这个通知发生在你指定的时间窗口内（从最后一项数据的发射算起）。也就是说，onCompleted通知不会触发限流。</string>
+
+    <string name="activity_category3_filtering_observables_11_distinct">3.11 distinct</string>
+    <string name="activity_category3_filtering_observables_11_distinct_description">&#160;&#160;&#160;&#160;抑制（过滤掉）重复的数据项。
+        \n&#160;&#160;&#160;&#160;Distinct的过滤规则是：只允许还没有发射过的数据项通过。
+        \n&#160;&#160;&#160;&#160;在某些实现中，有一些变体允许你调整判定两个数据不同(distinct)的标准。还有一些实现只比较一项数据和它的直接前驱，因此只会从序列中过滤掉连续重复的数据。</string>
+
+    <string name="activity_category3_filtering_observables_12_ignore_elements">3.12 ignoreElements</string>
+    <string name="activity_category3_filtering_observables_12_ignore_elements_description">&#160;&#160;&#160;&#160;不发射任何数据，只发射Observable的终止通知。
+        \n&#160;&#160;&#160;&#160;IgnoreElements操作符抑制原始Observable发射的所有数据，只允许它的终止通知（onError或onCompleted）通过。
+        \n&#160;&#160;&#160;&#160;如果你不关心一个Observable发射的数据，但是希望在它完成时或遇到错误终止时收到通知，你可以对Observable使用ignoreElements操作符，它会确保永远不会调用观察者的onNext()方法。
+        \n&#160;&#160;&#160;&#160;ignoreElements默认不在任何特定的调度器上执行。</string>
+    <!-- 3. 过滤操作 end -->
 </resources>

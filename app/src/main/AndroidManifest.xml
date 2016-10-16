@@ -101,39 +101,89 @@
         </activity>
         <!-- 2. 变换操作 end -->
 
-        <activity android:name=".activity.category3_filtering_observables.Category3FilteringObservablesActivity"
+        <!-- 3. 过滤操作 start -->
+        <activity android:name=".activity.category3_filtering_observables.Category3_FilteringObservablesActivity"
             android:label="@string/activity_main_3_filtering_observables">
         </activity>
 
-        <activity android:name=".activity.category4_combining_observables.Category4CombiningObservablesActivity"
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator1FilterActivity"
+            android:label="@string/activity_category3_filtering_observables_1_filter">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator2TakeLastActivity"
+            android:label="@string/activity_category3_filtering_observables_2_take_last">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator3LastActivity"
+            android:label="@string/activity_category3_filtering_observables_3_last">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator4SkipActivity"
+            android:label="@string/activity_category3_filtering_observables_4_skip">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator5SkipLastActivity"
+            android:label="@string/activity_category3_filtering_observables_5_skip_last">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator6TakeActivity"
+            android:label="@string/activity_category3_filtering_observables_6_take">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator7FirstActivity"
+            android:label="@string/activity_category3_filtering_observables_7_first">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator8ElementAtActivity"
+            android:label="@string/activity_category3_filtering_observables_8_element_at">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator9SampleActivity"
+            android:label="@string/activity_category3_filtering_observables_9_sample">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator10DebounceActivity"
+            android:label="@string/activity_category3_filtering_observables_10_debounce">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator11DistinctActivity"
+            android:label="@string/activity_category3_filtering_observables_11_distinct">
+        </activity>
+
+        <activity android:name=".activity.category3_filtering_observables.Category3Operator12IgnoreElementsActivity"
+            android:label="@string/activity_category3_filtering_observables_12_ignore_elements">
+        </activity>
+        <!-- 3. 过滤操作 end -->
+
+        <activity android:name=".activity.category4_combining_observables.Category4_CombiningObservablesActivity"
             android:label="@string/activity_main_4_combining_observables">
         </activity>
 
-        <activity android:name=".activity.category5_error_handling_operators.Category5ErrorHandlingOperatorsActivity"
+        <activity android:name=".activity.category5_error_handling_operators.Category5_ErrorHandlingOperatorsActivity"
             android:label="@string/activity_main_5_error_handling_operators">
         </activity>
 
-        <activity android:name=".activity.category6_observable_utility_operators.Category6ObservableUtilityOperatorsActivity"
+        <activity android:name=".activity.category6_observable_utility_operators.Category6_ObservableUtilityOperatorsActivity"
             android:label="@string/activity_main_6_observable_utility_operators">
         </activity>
 
-        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7ConditionalAndBooleanOperatorsActivity"
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7_ConditionalAndBooleanOperatorsActivity"
             android:label="@string/activity_main_7_conditional_and_boolean_operators">
         </activity>
 
-        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8MathematicalAndAggregateOperatorsActivity"
+        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8_MathematicalAndAggregateOperatorsActivity"
             android:label="@string/activity_main_8_mathematical_and_aggregate_operators">
         </activity>
 
-        <activity android:name=".activity.category9_backpressure_operators.Category9BackpressureOperatorsActivity"
+        <activity android:name=".activity.category9_backpressure_operators.Category9_BackpressureOperatorsActivity"
             android:label="@string/activity_main_9_backpressure_operators">
         </activity>
 
-        <activity android:name=".activity.category10_connectable_observable_operators.Category10ConnectableObservableOperatorsActivity"
+        <activity android:name=".activity.category10_connectable_observable_operators.Category10_ConnectableObservableOperatorsActivity"
             android:label="@string/activity_main_10_connectable_observable_operators">
         </activity>
 
-        <activity android:name=".activity.category11_operators_to_convert_observables.Category11OperatorsToConvertObservablesActivity"
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11_OperatorsToConvertObservablesActivity"
             android:label="@string/activity_main_11_operators_to_convert_observables">
         </activity>
     </application>
