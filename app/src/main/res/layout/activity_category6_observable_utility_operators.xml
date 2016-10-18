@@ -1,6 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/button_margin"
+        tools:context="com.sherlockshi.rxjavapractise.MainActivity">
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator1MaterializeActivity"
+            android:text="@string/activity_category6_observable_utility_operators_1_materialize" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator2DematerializeActivity"
+            android:text="@string/activity_category6_observable_utility_operators_2_dematerialize" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator3TimestampActivity"
+            android:text="@string/activity_category6_observable_utility_operators_3_timestamp" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator4SerializeActivity"
+            android:text="@string/activity_category6_observable_utility_operators_4_serialize" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator5ObserveOnActivity"
+            android:text="@string/activity_category6_observable_utility_operators_5_observe_on" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator6SubscribeActivity"
+            android:text="@string/activity_category6_observable_utility_operators_6_subscribe" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator7SubscribeOnActivity"
+            android:text="@string/activity_category6_observable_utility_operators_7_subscribe_on" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator8DelayActivity"
+            android:text="@string/activity_category6_observable_utility_operators_8_delay" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator9TimeIntervalActivity"
+            android:text="@string/activity_category6_observable_utility_operators_9_time_interval" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator10TimeoutActivity"
+            android:text="@string/activity_category6_observable_utility_operators_10_timeout" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator11UsingActivity"
+            android:text="@string/activity_category6_observable_utility_operators_11_using" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory6Operator12DoActivity"
+            android:text="@string/activity_category6_observable_utility_operators_12_do_on_each" />
+    </LinearLayout>
+</ScrollView>

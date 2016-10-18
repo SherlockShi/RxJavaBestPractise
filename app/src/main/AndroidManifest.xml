@@ -189,13 +189,81 @@
         </activity>
         <!-- 4. 组合操作 end -->
 
+        <!-- 5. 错误处理 start -->
         <activity android:name=".activity.category5_error_handling_operators.Category5_ErrorHandlingOperatorsActivity"
             android:label="@string/activity_main_5_error_handling_operators">
         </activity>
 
+        <activity android:name=".activity.category5_error_handling_operators.Category5Operator1_1OnErrorReturnActivity"
+            android:label="@string/activity_category5_error_handling_operators_1_1_on_error_return">
+        </activity>
+
+        <activity android:name=".activity.category5_error_handling_operators.Category5Operator1_2OnErrorResumeNextActivity"
+            android:label="@string/activity_category5_error_handling_operators_1_2_on_error_resume_next">
+        </activity>
+
+        <activity android:name=".activity.category5_error_handling_operators.Category5Operator1_3OnExceptionResumeNextActivity"
+            android:label="@string/activity_category5_error_handling_operators_1_3_on_exception_resume_next">
+        </activity>
+
+        <activity android:name=".activity.category5_error_handling_operators.Category5Operator2RetryActivity"
+            android:label="@string/activity_category5_error_handling_operators_2_retry">
+        </activity>
+        <!-- 5. 错误处理 end -->
+
+        <!-- 6. 辅助操作 start -->
         <activity android:name=".activity.category6_observable_utility_operators.Category6_ObservableUtilityOperatorsActivity"
             android:label="@string/activity_main_6_observable_utility_operators">
         </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator1MaterializeActivity"
+            android:label="@string/activity_category6_observable_utility_operators_1_materialize">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator2DematerializeActivity"
+            android:label="@string/activity_category6_observable_utility_operators_2_dematerialize">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator3TimestampActivity"
+            android:label="@string/activity_category6_observable_utility_operators_3_timestamp">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator4SerializeActivity"
+            android:label="@string/activity_category6_observable_utility_operators_4_serialize">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator5ObserveOnActivity"
+            android:label="@string/activity_category6_observable_utility_operators_5_observe_on">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator6SubscribeActivity"
+            android:label="@string/activity_category6_observable_utility_operators_6_subscribe">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator7SubscribeOnActivity"
+            android:label="@string/activity_category6_observable_utility_operators_7_subscribe_on">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator8DelayActivity"
+            android:label="@string/activity_category6_observable_utility_operators_8_delay">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator9TimeIntervalActivity"
+            android:label="@string/activity_category6_observable_utility_operators_9_time_interval">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator10TimeoutActivity"
+            android:label="@string/activity_category6_observable_utility_operators_10_timeout">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator11UsingActivity"
+            android:label="@string/activity_category6_observable_utility_operators_11_using">
+        </activity>
+
+        <activity android:name=".activity.category6_observable_utility_operators.Category6Operator12DoActivity"
+            android:label="@string/activity_category6_observable_utility_operators_12_do_on_each">
+        </activity>
+        <!-- 6. 辅助操作 end -->
 
         <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7_ConditionalAndBooleanOperatorsActivity"
             android:label="@string/activity_main_7_conditional_and_boolean_operators">

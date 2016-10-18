@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/button_margin"
+        tools:context="com.sherlockshi.rxjavapractise.MainActivity">
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory5Operator1_1OnErrorReturnActivity"
+            android:text="@string/activity_category5_error_handling_operators_1_1_on_error_return" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory5Operator1_2OnErrorResumeNextActivity"
+            android:text="@string/activity_category5_error_handling_operators_1_2_on_error_resume_next" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory5Operator1_3OnExceptionResumeNextActivity"
+            android:text="@string/activity_category5_error_handling_operators_1_3_on_exception_resume_next" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory5Operator2RetryActivity"
+            android:text="@string/activity_category5_error_handling_operators_2_retry" />
+    </LinearLayout>
+</ScrollView>

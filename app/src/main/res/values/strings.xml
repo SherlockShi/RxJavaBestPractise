@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RxJavaBestPractise</string>
+    <string name="app_name">RxJava</string>
 
     <string name="activity_main_press_again_to_quit">再按一次退出程序</string>
 
@@ -259,4 +259,119 @@
         \n&#160;&#160;&#160;&#160;Switch订阅一个发射多个Observables的Observable。它每次观察那些Observables中的一个，Switch返回的这个Observable取消订阅前一个发射数据的Observable，开始发射最近的Observable发射的数据。注意：当原始Observable发射了一个新的Observable时（不是这个新的Observable发射了一条数据时），它将取消订阅之前的那个Observable。这意味着，在后来那个Observable产生之后到它开始发射数据之前的这段时间里，前一个Observable发射的数据将被丢弃（就像图例上的那个黄色圆圈一样）。
         \n&#160;&#160;&#160;&#160;Java将这个操作符实现为switchOnNext。它默认不在任何特定的调度器上执行。</string>
     <!-- 4. 结合操作 end -->
+
+    <!-- 5. 错误处理 start -->
+    <string name="activity_category5_error_handling_operators_1_1_on_error_return">5.1.1 onErrorReturn</string>
+    <string name="activity_category5_error_handling_operators_1_1_on_error_return_description">&#160;&#160;&#160;&#160;让Observable遇到错误时发射一个特殊的项并且正常终止。
+        \n&#160;&#160;&#160;&#160;onErrorReturn方法返回一个镜像原有Observable行为的新Observable，后者会忽略前者的onError调用，不会将错误传递给观察者，作为替代，它会发发射一个特殊的项并调用观察者的onCompleted方法。</string>
+
+    <string name="activity_category5_error_handling_operators_1_2_on_error_resume_next">5.1.2 onErrorResumeNext</string>
+    <string name="activity_category5_error_handling_operators_1_2_on_error_resume_next_description">&#160;&#160;&#160;&#160;让Observable在遇到错误时开始发射第二个Observable的数据序列。
+        \n&#160;&#160;&#160;&#160;onErrorResumeNext方法返回一个镜像原有Observable行为的新Observable，后者会忽略前者的onError调用，不会将错误传递给观察者，作为替代，它会开始镜像另一个，备用的Observable。</string>
+
+    <string name="activity_category5_error_handling_operators_1_3_on_exception_resume_next">5.1.3 onExceptionResumeNext</string>
+    <string name="activity_category5_error_handling_operators_1_3_on_exception_resume_next_description">&#160;&#160;&#160;&#160;让Observable在遇到错误时继续发射后面的数据项。
+        \n&#160;&#160;&#160;&#160;和onErrorResumeNext类似，onExceptionResumeNext方法返回一个镜像原有Observable行为的新Observable，也使用一个备用的Observable，不同的是，如果onError收到的Throwable不是一个Exception，它会将错误传递给观察者的onError方法，不会使用备用的Observable。</string>
+
+    <string name="activity_category5_error_handling_operators_2_retry">5.2 retry</string>
+    <string name="activity_category5_error_handling_operators_2_retry_description">&#160;&#160;&#160;&#160;如果原始Observable遇到错误，重新订阅它期望它能正常终止。
+        \n&#160;&#160;&#160;&#160;Retry操作符不会将原始Observable的onError通知传递给观察者，它会订阅这个Observable，再给它一次机会无错误地完成它的数据序列。Retry总是传递onNext通知给观察者，由于重新订阅，可能会造成数据项重复，如上图所示。
+        \n&#160;&#160;&#160;&#160;RxJava中的实现为retry和retryWhen。
+        \n&#160;&#160;&#160;&#160;无论收到多少次onError通知，无参数版本的retry都会继续订阅并发射原始Observable。
+        \n&#160;&#160;&#160;&#160;接受单个count参数的retry会最多重新订阅指定的次数，如果次数超了，它不会尝试再次订阅，它会把最新的一个onError通知传递给它的观察者。
+        \n&#160;&#160;&#160;&#160;还有一个版本的retry接受一个谓词函数作为参数，这个函数的两个参数是：重试次数和导致发射onError通知的Throwable。这个函数返回一个布尔值，如果返回true，retry应该再次订阅和镜像原始的Observable，如果返回false，retry会将最新的一个onError通知传递给它的观察者。
+        \n&#160;&#160;&#160;&#160;retry操作符默认在trampoline调度器上执行。</string>
+    <!-- 5. 错误处理 end -->
+
+    <!-- 6. 辅助操作 start -->
+    <string name="activity_category6_observable_utility_operators_1_materialize">6.1 materialize</string>
+    <string name="activity_category6_observable_utility_operators_1_materialize_description">&#160;&#160;&#160;&#160;Materialize将数据项和事件通知都当做数据项发射。
+        \n&#160;&#160;&#160;&#160;一个合法的有限的Obversable将调用它的观察者的onNext方法零次或多次，然后调用观察者的onCompleted或onError正好一次。Materialize操作符将这一系列调用，包括原来的onNext通知和终止通知onCompleted或onError都转换为一个Observable发射的数据序列。
+        \n&#160;&#160;&#160;&#160;RxJava的materialize将来自原始Observable的通知转换为Notification对象，然后它返回的Observable会发射这些数据。
+        \n&#160;&#160;&#160;&#160;materialize默认不在任何特定的调度器 (Scheduler) 上执行。</string>
+
+    <string name="activity_category6_observable_utility_operators_2_dematerialize">6.2 dematerialize</string>
+    <string name="activity_category6_observable_utility_operators_2_dematerialize_description">&#160;&#160;&#160;&#160;Dematerialize操作符是Materialize的逆向过程，它将Materialize转换的结果还原成它原本的形式。
+        \n&#160;&#160;&#160;&#160;dematerialize反转这个过程，将原始Observable发射的Notification对象还原成Observable的通知。
+        \n&#160;&#160;&#160;&#160;dematerialize默认不在任何特定的调度器 (Scheduler) 上执行。</string>
+
+    <string name="activity_category6_observable_utility_operators_3_timestamp">6.3 timestamp</string>
+    <string name="activity_category6_observable_utility_operators_3_timestamp_description">&#160;&#160;&#160;&#160;给Observable发射的数据项附加一个时间戳。
+        \n&#160;&#160;&#160;&#160;RxJava中的实现为timestamp，它将一个发射T类型数据的Observable转换为一个发射类型为Timestamped&lt;T&gt;的数据的Observable，每一项都包含数据的原始发射时间。
+        \n&#160;&#160;&#160;&#160;timestamp默认在immediate调度器上执行，但是可以通过参数指定其它的调度器。</string>
+
+    <string name="activity_category6_observable_utility_operators_4_serialize">6.4 serialize</string>
+    <string name="activity_category6_observable_utility_operators_4_serialize_description">&#160;&#160;&#160;&#160;给强制一个Observable连续调用并保证行为正确。
+        \n&#160;&#160;&#160;&#160;一个Observable可以异步调用它的观察者的方法，可能是从不同的线程调用。这可能会让Observable行为不正确，它可能会在某一个onNext调用之前尝试调用onCompleted或onError方法，或者从两个不同的线程同时调用onNext方法。使用Serialize操作符，你可以纠正这个Observable的行为，保证它的行为是正确的且是同步的。
+        \n&#160;&#160;&#160;&#160;RxJava中的实现是serialize，它默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category6_observable_utility_operators_5_observe_on">6.5 observeOn</string>
+    <string name="activity_category6_observable_utility_operators_5_observe_on_description">&#160;&#160;&#160;&#160;指定一个观察者在哪个调度器上观察这个Observable。
+        \n&#160;&#160;&#160;&#160;很多ReactiveX实现都使用调度器 "Scheduler"来管理多线程环境中Observable的转场。你可以使用ObserveOn操作符指定Observable在一个特定的调度器上发送通知给观察者 (调用观察者的onNext, onCompleted, onError方法)。
+        \n&#160;&#160;&#160;&#160;注意：当遇到一个异常时ObserveOn会立即向前传递这个onError终止通知，它不会等待慢速消费的Observable接受任何之前它已经收到但还没有发射的数据项。这可能意味着onError通知会跳到（并吞掉）原始Observable发射的数据项前面，正如图例上展示的。
+        \n&#160;&#160;&#160;&#160;SubscribeOn操作符的作用类似，但它是用于指定Observable本身在特定的调度器上执行，它同样会在那个调度器上给观察者发通知。
+        \n&#160;&#160;&#160;&#160;RxJava中，要指定Observable应该在哪个调度器上调用观察者的onNext, onCompleted, onError方法，你需要使用observeOn操作符，传递给它一个合适的Scheduler。</string>
+
+    <string name="activity_category6_observable_utility_operators_6_subscribe">6.6 subscribe</string>
+    <string name="activity_category6_observable_utility_operators_6_subscribe_description">&#160;&#160;&#160;&#160;操作来自Observable的发射物和通知。
+        \n&#160;&#160;&#160;&#160;Subscribe操作符是连接观察者和Observable的胶水。一个观察者要想看到Observable发射的数据项，或者想要从Observable获取错误和完成通知，它首先必须使用这个操作符订阅那个Observable。
+        \n&#160;&#160;&#160;&#160;Subscribe操作符的一般实现可能会接受一到三个方法（然后由观察者组合它们），或者接受一个实现了包含这三个方法的接口的对象（有时叫做Observer或Subscriber）：
+        \n&#160;&#160;&#160;&#160;onNext
+        \n&#160;&#160;&#160;&#160;每当Observable发射了一项数据它就会调用这个方法。这个方法的参数是这个Observable发射的数据项。
+        \n&#160;&#160;&#160;&#160;onError
+        \n&#160;&#160;&#160;&#160;Observable调用这个方法表示它无法生成期待的数据或者遇到了其它错误。这将停止Observable，它在这之后不会再调用onNext或onCompleted。onError方法的参数是导致这个错误的原因的一个表示（有时可能是一个Exception或Throwable对象，其它时候也可能是一个简单的字符串，取决于具体的实现）。
+        \n&#160;&#160;&#160;&#160;onCompleted
+        \n&#160;&#160;&#160;&#160;如果没有遇到任何错误，Observable在最后一次调用onCompleted之后会调用这个方法。
+        \n&#160;&#160;&#160;&#160;如果一个Observable直到有一个观察者订阅它才开始发射数据项，就称之为"冷"的Observable；如果一个Observable可能在任何时刻开始发射数据，就称之为"热"的Observable，一个订阅者可能从开始之后的某个时刻开始观察它发射的数据序列，它可能会错过在订阅之前发射的数据。
+        \n&#160;&#160;&#160;&#160;RxJava中的实现是subscribe方法。
+        \n&#160;&#160;&#160;&#160;如果你使用无参数的版本，它将触发对Observable的一个订阅，但是将忽略它的发射物和通知。这个操作会激活一个"冷"的Observable。
+        \n&#160;&#160;&#160;&#160;你也可以传递一到三个函数给它，它们会按下面的方法解释：
+        \n&#160;&#160;&#160;&#160;onNext
+        \n&#160;&#160;&#160;&#160;onNext和onError
+        \n&#160;&#160;&#160;&#160;onNext, onError和onCompleted
+        \n&#160;&#160;&#160;&#160;最后，你还可以传递一个Observer或Subscriber接口给它，Observer接口包含这三个以on开头的方法。Subscriber接口也实现了这三个方法，而且还添加了几个额外的方法，用于支持使用反压操作(reactive pull backpressure)，这让Subscriber可以在Observable完成前取消订阅。
+        \n&#160;&#160;&#160;&#160;subscribe方法返回一个实现了Subscription接口的对象。这个接口包含unsubscribe方法，任何时刻你都可以调用它来断开subscribe方法建立的Observable和观察者之间的订阅关系。</string>
+
+    <string name="activity_category6_observable_utility_operators_7_subscribe_on">6.7 subscribeOn</string>
+    <string name="activity_category6_observable_utility_operators_7_subscribe_on_description">&#160;&#160;&#160;&#160;指定Observable自身在哪个调度器上执行。
+        \n&#160;&#160;&#160;&#160;很多ReactiveX实现都使用调度器 "Scheduler"来管理多线程环境中Observable的转场。你可以使用SubscribeOn操作符指定Observable在一个特定的调度器上运转。
+        \n&#160;&#160;&#160;&#160;ObserveOn操作符的作用类似，但是功能很有限，它指示Observable在一个指定的调度器上给观察者发通知。</string>
+
+    <string name="activity_category6_observable_utility_operators_8_delay">6.8 delay</string>
+    <string name="activity_category6_observable_utility_operators_8_delay_description">&#160;&#160;&#160;&#160;延迟一段指定的时间再发射来自Observable的发射物。
+        \n&#160;&#160;&#160;&#160;Delay操作符让原始Observable在发射每项数据之前都暂停一段指定的时间段。效果是Observable发射的数据项在时间上向前整体平移了一个增量。
+        \n&#160;&#160;&#160;&#160;RxJava的实现是 delay和delaySubscription。
+        \n&#160;&#160;&#160;&#160;第一种delay接受一个定义时长的参数（包括数量和单位）。每当原始Observable发射一项数据，delay就启动一个定时器，当定时器过了给定的时间段时，delay返回的Observable发射相同的数据项。
+        \n&#160;&#160;&#160;&#160;注意：delay不会平移onError通知，它会立即将这个通知传递给订阅者，同时丢弃任何待发射的onNext通知。然而它会平移一个onCompleted通知。
+        \n&#160;&#160;&#160;&#160;delay默认在computation调度器上执行，你可以通过参数指定使用其它的调度器。</string>
+
+    <string name="activity_category6_observable_utility_operators_9_time_interval">6.9 timeInterval</string>
+    <string name="activity_category6_observable_utility_operators_9_time_interval_description">&#160;&#160;&#160;&#160;将一个发射数据的Observable转换为发射那些数据发射时间间隔的Observable。
+        \n&#160;&#160;&#160;&#160;TimeInterval操作符拦截原始Observable发射的数据项，替换为发射表示相邻发射物时间间隔的对象。
+        \n&#160;&#160;&#160;&#160;RxJava中的实现为timeInterval，这个操作符将原始Observable转换为另一个Obserervable，后者发射一个标志替换前者的数据项，这个标志表示前者的两个连续发射物之间流逝的时间长度。新的Observable的第一个发射物表示的是在观察者订阅原始Observable到原始Observable发射它的第一项数据之间流逝的时间长度。不存在与原始Observable发射最后一项数据和发射onCompleted通知之间时长对应的发射物。
+        \n&#160;&#160;&#160;&#160;timeInterval默认在immediate调度器上执行，你可以通过传参数修改。</string>
+
+    <string name="activity_category6_observable_utility_operators_10_timeout">6.10 timeout</string>
+    <string name="activity_category6_observable_utility_operators_10_timeout_description">&#160;&#160;&#160;&#160;对原始Observable的一个镜像，如果过了一个指定的时长仍没有发射数据，它会发一个错误通知。
+        \n&#160;&#160;&#160;&#160;如果原始Observable过了指定的一段时长没有发射任何数据，Timeout操作符会以一个onError通知终止这个Observable。
+        \n&#160;&#160;&#160;&#160;RxJava中的实现为timeout，但是有好几个变体。
+        \n&#160;&#160;&#160;&#160;第一个变体接受一个时长参数，每当原始Observable发射了一项数据，timeout就启动一个计时器，如果计时器超过了指定指定的时长而原始Observable没有发射另一项数据，timeout就抛出TimeoutException，以一个错误通知终止Observable。
+        \n&#160;&#160;&#160;&#160;这个timeout默认在computation调度器上执行，你可以通过参数指定其它的调度器。</string>
+
+    <string name="activity_category6_observable_utility_operators_11_using">6.11 using</string>
+    <string name="activity_category6_observable_utility_operators_11_using_description">&#160;&#160;&#160;&#160;创建一个只在Observable生命周期内存在的一次性资源。
+        \n&#160;&#160;&#160;&#160;Using操作符让你可以指示Observable创建一个只在它的生命周期内存在的资源，当Observable终止时这个资源会被自动释放。
+        \n&#160;&#160;&#160;&#160;using操作符接受三个参数：
+        \n&#160;&#160;&#160;&#160;1. 一个用户创建一次性资源的工厂函数
+        \n&#160;&#160;&#160;&#160;2. 一个用于创建Observable的工厂函数
+        \n&#160;&#160;&#160;&#160;3. 一个用于释放资源的函数
+        \n&#160;&#160;&#160;&#160;当一个观察者订阅using返回的Observable时，using将会使用Observable工厂函数创建观察者要观察的Observable，同时使用资源工厂函数创建一个你想要创建的资源。当观察者取消订阅这个Observable时，或者当观察者终止时（无论是正常终止还是因错误而终止），using使用第三个函数释放它创建的资源。
+        \n&#160;&#160;&#160;&#160;using默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category6_observable_utility_operators_12_do_on_each">6.12 doOnEach</string>
+    <string name="activity_category6_observable_utility_operators_12_do_on_each_description">&#160;&#160;&#160;&#160;注册一个动作作为原始Observable生命周期事件的一种占位符。
+        \n&#160;&#160;&#160;&#160;你可以注册回调，当Observable的某个事件发生时，Rx会在与Observable链关联的正常通知集合中调用它。Rx实现了多种操作符用于达到这个目的。
+        \n&#160;&#160;&#160;&#160;RxJava实现了很多Do操作符的变体。
+        \n&#160;&#160;&#160;&#160;doOnEach操作符让你可以注册一个回调，它产生的Observable每发射一项数据就会调用它一次。你可以以Action的形式传递参数给它，这个Action接受一个onNext的变体Notification作为它的唯一参数，你也可以传递一个Observable给doOnEach，这个Observable的onNext会被调用，就好像它订阅了原始的Observable一样。</string>
+    <!-- 6. 辅助操作 end -->
 </resources>
