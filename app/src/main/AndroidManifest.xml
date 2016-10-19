@@ -265,17 +265,99 @@
         </activity>
         <!-- 6. 辅助操作 end -->
 
+        <!-- 7. 条件和布尔操作 start -->
         <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7_ConditionalAndBooleanOperatorsActivity"
             android:label="@string/activity_main_7_conditional_and_boolean_operators">
         </activity>
 
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7Operator1AmbActivity"
+            android:label="@string/activity_category7_conditional_and_boolean_operators_1_amb">
+        </activity>
+
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7Operator2DefaultIfEmptyActivity"
+            android:label="@string/activity_category7_conditional_and_boolean_operators_2_default_if_empty">
+        </activity>
+
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7Operator3SkipUntilActivity"
+            android:label="@string/activity_category7_conditional_and_boolean_operators_3_skip_until">
+        </activity>
+
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7Operator4SkipWhileActivity"
+            android:label="@string/activity_category7_conditional_and_boolean_operators_4_skip_while">
+        </activity>
+
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7Operator5TakeUntilActivity"
+            android:label="@string/activity_category7_conditional_and_boolean_operators_5_take_until">
+        </activity>
+
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7Operator6TakeWhileActivity"
+            android:label="@string/activity_category7_conditional_and_boolean_operators_6_take_while">
+        </activity>
+
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7Operator7AllActivity"
+            android:label="@string/activity_category7_conditional_and_boolean_operators_7_all">
+        </activity>
+
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7Operator8ContainsActivity"
+            android:label="@string/activity_category7_conditional_and_boolean_operators_8_contains">
+        </activity>
+
+        <activity android:name=".activity.category7_conditional_and_boolean_operators.Category7Operator9SequenceEqualActivity"
+            android:label="@string/activity_category7_conditional_and_boolean_operators_9_sequence_equal">
+        </activity>
+        <!-- 7. 条件和布尔操作 end -->
+
+        <!-- 8. 算术和聚合操作 start -->
         <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8_MathematicalAndAggregateOperatorsActivity"
             android:label="@string/activity_main_8_mathematical_and_aggregate_operators">
         </activity>
 
+        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8Operator1AverageActivity"
+            android:label="@string/activity_category8_mathematical_and_aggregate_operators_1_average">
+        </activity>
+
+        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8Operator2MaxActivity"
+            android:label="@string/activity_category8_mathematical_and_aggregate_operators_2_max">
+        </activity>
+
+        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8Operator3MinActivity"
+            android:label="@string/activity_category8_mathematical_and_aggregate_operators_3_min">
+        </activity>
+
+        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8Operator4SumActivity"
+            android:label="@string/activity_category8_mathematical_and_aggregate_operators_4_sum">
+        </activity>
+
+        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8Operator5ConcatActivity"
+            android:label="@string/activity_category8_mathematical_and_aggregate_operators_5_concat">
+        </activity>
+
+        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8Operator6CountActivity"
+            android:label="@string/activity_category8_mathematical_and_aggregate_operators_6_count">
+        </activity>
+
+        <activity android:name=".activity.category8_mathematical_and_aggregate_operators.Category8Operator7ReduceActivity"
+            android:label="@string/activity_category8_mathematical_and_aggregate_operators_7_reduce">
+        </activity>
+        <!-- 8. 算术和聚合操作 end -->
+
+        <!-- 9. 反压操作 start -->
         <activity android:name=".activity.category9_backpressure_operators.Category9_BackpressureOperatorsActivity"
             android:label="@string/activity_main_9_backpressure_operators">
         </activity>
+
+        <activity android:name=".activity.category9_backpressure_operators.Category9Operator1OnBackpressureBufferActivity"
+            android:label="@string/activity_category9_backpressure_operators_1_on_backpressure_buffer">
+        </activity>
+
+        <activity android:name=".activity.category9_backpressure_operators.Category9Operator2OnBackpressureDropActivity"
+            android:label="@string/activity_category9_backpressure_operators_2_on_backpressure_drop">
+        </activity>
+
+        <activity android:name=".activity.category9_backpressure_operators.Category9Operator3OnBackpressureLatestActivity"
+            android:label="@string/activity_category9_backpressure_operators_3_on_backpressure_latest">
+        </activity>
+        <!-- 9. 反压操作 end -->
 
         <activity android:name=".activity.category10_connectable_observable_operators.Category10_ConnectableObservableOperatorsActivity"
             android:label="@string/activity_main_10_connectable_observable_operators">

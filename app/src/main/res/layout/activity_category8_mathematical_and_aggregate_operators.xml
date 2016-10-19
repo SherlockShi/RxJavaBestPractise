@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/button_margin"
+        tools:context="com.sherlockshi.rxjavapractise.MainActivity">
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory8Operator1AverageActivity"
+            android:text="@string/activity_category8_mathematical_and_aggregate_operators_1_average" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory8Operator2MaxActivity"
+            android:text="@string/activity_category8_mathematical_and_aggregate_operators_2_max" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory8Operator3MinActivity"
+            android:text="@string/activity_category8_mathematical_and_aggregate_operators_3_min" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory8Operator4SumActivity"
+            android:text="@string/activity_category8_mathematical_and_aggregate_operators_4_sum" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory8Operator5ConcatActivity"
+            android:text="@string/activity_category8_mathematical_and_aggregate_operators_5_concat" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory8Operator6CountActivity"
+            android:text="@string/activity_category8_mathematical_and_aggregate_operators_6_count" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory8Operator7ReduceActivity"
+            android:text="@string/activity_category8_mathematical_and_aggregate_operators_7_reduce" />
+    </LinearLayout>
+</ScrollView>

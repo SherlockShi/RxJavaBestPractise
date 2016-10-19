@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/button_margin"
+        tools:context="com.sherlockshi.rxjavapractise.MainActivity">
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory7Operator1AmbActivity"
+            android:text="@string/activity_category7_conditional_and_boolean_operators_1_amb" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory7Operator2DefaultIfEmptyActivity"
+            android:text="@string/activity_category7_conditional_and_boolean_operators_2_default_if_empty" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory7Operator3SkipUntilActivity"
+            android:text="@string/activity_category7_conditional_and_boolean_operators_3_skip_until" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory7Operator4SkipWhileActivity"
+            android:text="@string/activity_category7_conditional_and_boolean_operators_4_skip_while" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory7Operator5TakeUntilActivity"
+            android:text="@string/activity_category7_conditional_and_boolean_operators_5_take_until" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory7Operator6TakeWhileActivity"
+            android:text="@string/activity_category7_conditional_and_boolean_operators_6_take_while" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory7Operator7AllActivity"
+            android:text="@string/activity_category7_conditional_and_boolean_operators_7_all" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory7Operator8ContainsActivity"
+            android:text="@string/activity_category7_conditional_and_boolean_operators_8_contains" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpToCategory7Operator9SequenceEqualActivity"
+            android:text="@string/activity_category7_conditional_and_boolean_operators_9_sequence_equal" />
+    </LinearLayout>
+</ScrollView>

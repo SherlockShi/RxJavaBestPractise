@@ -374,4 +374,116 @@
         \n&#160;&#160;&#160;&#160;RxJava实现了很多Do操作符的变体。
         \n&#160;&#160;&#160;&#160;doOnEach操作符让你可以注册一个回调，它产生的Observable每发射一项数据就会调用它一次。你可以以Action的形式传递参数给它，这个Action接受一个onNext的变体Notification作为它的唯一参数，你也可以传递一个Observable给doOnEach，这个Observable的onNext会被调用，就好像它订阅了原始的Observable一样。</string>
     <!-- 6. 辅助操作 end -->
+
+    <!-- 7. 条件和布尔操作 start -->
+    <string name="activity_category7_conditional_and_boolean_operators_1_amb">7.1 amb</string>
+    <string name="activity_category7_conditional_and_boolean_operators_1_amb_description">&#160;&#160;&#160;&#160;给定两个或多个Observables，它只发射首先发射数据或通知的那个Observable的所有数据。
+        \n&#160;&#160;&#160;&#160;当你传递多个Observable给Amb时，它只发射其中一个Observable的数据和通知：首先发送通知给Amb的那个，不管发射的是一项数据还是一个onError或onCompleted通知。Amb将忽略和丢弃其它所有Observables的发射物。
+        \n&#160;&#160;&#160;&#160;RxJava的实现是amb，有一个类似的对象方法ambWith。例如，Observable.amb(o1,o2)和o1.ambWith(o2)是等价的。
+        \n&#160;&#160;&#160;&#160;这个操作符默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category7_conditional_and_boolean_operators_2_default_if_empty">7.2 defaultIfEmpty</string>
+    <string name="activity_category7_conditional_and_boolean_operators_2_default_if_empty_description">&#160;&#160;&#160;&#160;发射来自原始Observable的值，如果原始Observable没有发射任何值，就发射一个默认值。
+        \n&#160;&#160;&#160;&#160;DefaultIfEmpty简单的精确地发射原始Observable的值，如果原始Observable没有发射任何数据正常终止（以onCompletedd的形式），DefaultIfEmpty返回的Observable就发射一个你提供的默认值。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为defaultIfEmpty。它默认不在任何特定的调度器上执行。
+        \n&#160;&#160;&#160;&#160;还有一个新的操作符switchIfEmpty，不在RxJava 1.0.0版中，它和defaultIfEmtpy类似，不同的是，如果原始Observable没有发射数据，它发射一个备用Observable的发射物。</string>
+
+    <string name="activity_category7_conditional_and_boolean_operators_3_skip_until">7.3 skipUntil</string>
+    <string name="activity_category7_conditional_and_boolean_operators_3_skip_until_description">&#160;&#160;&#160;&#160;丢弃原始Observable发射的数据，直到第二个Observable发射了一项数据。
+        \n&#160;&#160;&#160;&#160;SkipUntil订阅原始的Observable，但是忽略它的发射物，直到第二个Observable发射了一项数据那一刻，它开始发射原始Observable。
+        \n&#160;&#160;&#160;&#160;RxJava中对应的是skipUntil，它默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category7_conditional_and_boolean_operators_4_skip_while">7.4 skipWhile</string>
+    <string name="activity_category7_conditional_and_boolean_operators_4_skip_while_description">&#160;&#160;&#160;&#160;丢弃Observable发射的数据，直到一个指定的条件不成立。
+        \n&#160;&#160;&#160;&#160;SkipWhile订阅原始的Observable，但是忽略它的发射物，直到你指定的某个条件变为false的那一刻，它开始发射原始Observable。
+        \n&#160;&#160;&#160;&#160;skipWhile默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category7_conditional_and_boolean_operators_5_take_until">7.5 takeUntil</string>
+    <string name="activity_category7_conditional_and_boolean_operators_5_take_until_description">&#160;&#160;&#160;&#160;当第二个Observable发射了一项数据或者终止时，丢弃原始Observable发射的任何数据。
+        \n&#160;&#160;&#160;&#160;TakeUntil订阅并开始发射原始Observable，它还监视你提供的第二个Observable。如果第二个Observable发射了一项数据或者发射了一个终止通知，TakeUntil返回的Observable会停止发射原始Observable并终止。
+        \n&#160;&#160;&#160;&#160;RxJava中的实现是takeUntil。注意：第二个Observable发射一项数据或一个onError通知或一个onCompleted通知都会导致takeUntil停止发射数据。
+        \n&#160;&#160;&#160;&#160;takeUntil默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category7_conditional_and_boolean_operators_6_take_while">7.6 TakeWhile</string>
+    <string name="activity_category7_conditional_and_boolean_operators_6_take_while_description">&#160;&#160;&#160;&#160;发射Observable发射的数据，直到一个指定的条件不成立。
+        \n&#160;&#160;&#160;&#160;TakeWhile发射原始Observable，直到你指定的某个条件不成立的那一刻，它停止发射原始Observable，并终止自己的Observable。
+        \n&#160;&#160;&#160;&#160;RxJava中的takeWhile操作符返回一个镜像原始Observable行为的Observable，直到某一项数据你指定的函数返回false那一刻，这个新的Observable发射onCompleted终止通知。
+        \n&#160;&#160;&#160;&#160;takeWhile默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category7_conditional_and_boolean_operators_7_all">7.7 all</string>
+    <string name="activity_category7_conditional_and_boolean_operators_7_all_description">&#160;&#160;&#160;&#160;判定是否Observable发射的所有数据都满足某个条件。
+        \n&#160;&#160;&#160;&#160;传递一个谓词函数给All操作符，这个函数接受原始Observable发射的数据，根据计算返回一个布尔值。All返回一个只发射一个单个布尔值的Observable，如果原始Observable正常终止并且每一项数据都满足条件，就返回true；如果原始Observable的任何一项数据不满足条件就返回False。
+        \n&#160;&#160;&#160;&#160;RxJava将这个操作符实现为all，它默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category7_conditional_and_boolean_operators_8_contains">7.8 contains</string>
+    <string name="activity_category7_conditional_and_boolean_operators_8_contains_description">&#160;&#160;&#160;&#160;判定一个Observable是否发射一个特定的值。
+        \n&#160;&#160;&#160;&#160;给Contains传一个指定的值，如果原始Observable发射了那个值，它返回的Observable将发射true，否则发射false。
+        \n&#160;&#160;&#160;&#160;contains默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category7_conditional_and_boolean_operators_9_sequence_equal">7.9 sequenceEqual</string>
+    <string name="activity_category7_conditional_and_boolean_operators_9_sequence_equal_description">&#160;&#160;&#160;&#160;判定两个Observables是否发射相同的数据序列。
+        \n&#160;&#160;&#160;&#160;传递两个Observable给SequenceEqual操作符，它会比较两个Observable的发射物，如果两个序列是相同的（相同的数据，相同的顺序，相同的终止状态），它就发射true，否则发射false。
+        \n&#160;&#160;&#160;&#160;它还有一个版本接受第三个参数，可以传递一个函数用于比较两个数据项是否相同。
+        \n&#160;&#160;&#160;&#160;这个操作符默认不在任何特定的调度器上执行。</string>
+    <!-- 7. 条件和布尔操作 end -->
+
+    <!-- 8. 算术和聚合操作 start -->
+    <string name="activity_category8_mathematical_and_aggregate_operators_1_average">8.1 average</string>
+    <string name="activity_category8_mathematical_and_aggregate_operators_1_average_description">&#160;&#160;&#160;&#160;计算原始Observable发射数字的平均值并发射它。
+        \n&#160;&#160;&#160;&#160;Average操作符操作符一个发射数字的Observable，并发射单个值：原始Observable发射的数字序列的平均值。
+        \n&#160;&#160;&#160;&#160;这个操作符不包含在RxJava核心模块中，它属于不同的rxjava-math模块。它被实现为四个操作符：averageDouble, averageFloat, averageInteger, averageLong。
+        \n&#160;&#160;&#160;&#160;如果原始Observable不发射任何数据，这个操作符会抛异常：IllegalArgumentException</string>
+
+    <string name="activity_category8_mathematical_and_aggregate_operators_2_max">8.2 max</string>
+    <string name="activity_category8_mathematical_and_aggregate_operators_2_max_description">&#160;&#160;&#160;&#160;发射原始Observable的最大值。
+        \n&#160;&#160;&#160;&#160;Max操作符操作一个发射数值的Observable并发射单个值：最大的那个值。
+        \n&#160;&#160;&#160;&#160;RxJava中，max属于rxjava-math模块。
+        \n&#160;&#160;&#160;&#160;max接受一个可选参数，用于比较两项数据的大小，如果最大值的数据超过一项，max会发射原始Observable最近发射的那一项。
+        \n&#160;&#160;&#160;&#160;maxBy类似于max，但是它发射的不是最大值，而是发射Key最大的项，Key由你指定的一个函数生成。</string>
+
+    <string name="activity_category8_mathematical_and_aggregate_operators_3_min">8.3 min</string>
+    <string name="activity_category8_mathematical_and_aggregate_operators_3_min_description">&#160;&#160;&#160;&#160;发射原始Observable的最小值。
+        \n&#160;&#160;&#160;&#160;Min操作符操作一个发射数值的Observable并发射单个值：最小的那个值。
+        \n&#160;&#160;&#160;&#160;RxJava中，min属于rxjava-math模块。
+        \n&#160;&#160;&#160;&#160;min接受一个可选参数，用于比较两项数据的大小，如果最小值的数据超过一项，min会发射原始Observable最近发射的那一项。
+        \n&#160;&#160;&#160;&#160;minBy类似于min，但是它发射的不是最小值，而是发射Key最小的项，Key由你指定的一个函数生成。</string>
+
+    <string name="activity_category8_mathematical_and_aggregate_operators_4_sum">8.4 sum</string>
+    <string name="activity_category8_mathematical_and_aggregate_operators_4_sum_description">&#160;&#160;&#160;&#160;计算Observable发射的数值的和并发射这个和。
+        \n&#160;&#160;&#160;&#160;Sum操作符操作一个发射数值的Observable，仅发射单个值：原始Observable所有数值的和。
+        \n&#160;&#160;&#160;&#160;RxJava的实现是sumDouble, sumFloat, sumInteger, sumLong，它们不是RxJava核心模块的一部分，属于rxjava-math模块。</string>
+
+    <string name="activity_category8_mathematical_and_aggregate_operators_5_concat">8.5 concat</string>
+    <string name="activity_category8_mathematical_and_aggregate_operators_5_concat_description">&#160;&#160;&#160;&#160;不交错的发射两个或多个Observable的发射物。
+        \n&#160;&#160;&#160;&#160;Concat操作符连接多个Observable的输出，就好像它们是一个Observable，第一个Observable发射的所有数据在第二个Observable发射的任何数据前面，以此类推。
+        \n&#160;&#160;&#160;&#160;直到前面一个Observable终止，Concat才会订阅额外的一个Observable。注意：因此，如果你尝试连接一个"热"Observable（这种Observable在创建后立即开始发射数据，即使没有订阅者），Concat将不会看到也不会发射它之前发射的任何数据。
+        \n&#160;&#160;&#160;&#160;在ReactiveX的某些实现中有一种ConcatMap操作符（名字可能叫concat_all, concat_map, concatMapObserver, for, forIn/for_in, mapcat, selectConcat或selectConcatObserver），他会变换原始Observable发射的数据到一个对应的Observable，然后再按观察和变换的顺序进行连接操作。
+        \n&#160;&#160;&#160;&#160;StartWith操作符类似于Concat，但是它是插入到前面，而不是追加那些Observable的数据到原始Observable发射的数据序列。
+        \n&#160;&#160;&#160;&#160;Merge操作符也差不多，它结合两个或多个Observable的发射物，但是数据可能交错，而Concat不会让多个Observable的发射物交错。</string>
+
+    <string name="activity_category8_mathematical_and_aggregate_operators_6_count">8.6 count</string>
+    <string name="activity_category8_mathematical_and_aggregate_operators_6_count_description">&#160;&#160;&#160;&#160;计算原始Observable发射物的数量，然后只发射这个值。
+        \n&#160;&#160;&#160;&#160;Count操作符将一个Observable转换成一个发射单个值的Observable，这个值表示原始Observable发射的数据的数量。
+        \n&#160;&#160;&#160;&#160;如果原始Observable发生错误终止，Count不发射数据而是直接传递错误通知。如果原始Observable永远不终止，Count既不会发射数据也不会终止。
+        \n&#160;&#160;&#160;&#160;RxJava的实现是count和countLong。</string>
+
+    <string name="activity_category8_mathematical_and_aggregate_operators_7_reduce">8.7 reduce</string>
+    <string name="activity_category8_mathematical_and_aggregate_operators_7_reduce_description">&#160;&#160;&#160;&#160;按顺序对Observable发射的每项数据应用一个函数并发射最终的值。
+        \n&#160;&#160;&#160;&#160;Reduce操作符对原始Observable发射数据的第一项应用一个函数，然后再将这个函数的返回值与第二项数据一起传递给函数，以此类推，持续这个过程知道原始Observable发射它的最后一项数据并终止，此时Reduce返回的Observable发射这个函数返回的最终值。
+        \n&#160;&#160;&#160;&#160;在其它场景中，这种操作有时被称为累积，聚集，压缩，折叠，注射等。
+        \n&#160;&#160;&#160;&#160;注意如果原始Observable没有发射任何数据，reduce抛出异常IllegalArgumentException。
+        \n&#160;&#160;&#160;&#160;reduce默认不在任何特定的调度器上执行。</string>
+    <!-- 8. 算术和聚合操作 end -->
+
+    <!-- 9. 反压操作 start -->
+    <string name="activity_category9_backpressure_operators_1_on_backpressure_buffer">9.1 onBackpressureBuffer</string>
+    <string name="activity_category9_backpressure_operators_1_on_backpressure_buffer_description">&#160;&#160;&#160;&#160;onBackpressureBuffer 会缓存所有当前无法消费的数据，直到 Observer 可以处理为止。
+        \n&#160;&#160;&#160;&#160;你可以指定缓冲的数量，如果缓冲满了则会导致数据流失败。</string>
+
+    <string name="activity_category9_backpressure_operators_2_on_backpressure_drop">9.2 onBackpressureDrop</string>
+    <string name="activity_category9_backpressure_operators_2_on_backpressure_drop_description">&#160;&#160;&#160;&#160;如果消费者无法处理数据，则 onBackpressureDrop 就把该数据丢弃了。</string>
+
+    <string name="activity_category9_backpressure_operators_3_on_backpressure_latest">9.3 onBackpressureLatest</string>
+    <string name="activity_category9_backpressure_operators_3_on_backpressure_latest_description">&#160;&#160;&#160;&#160;当Observable发出的元素的速度比订阅者消化得要快,订阅者会接收Observable最新发出的item进行处理。</string>
+    <!-- 9. 反压操作 end -->
 </resources>
