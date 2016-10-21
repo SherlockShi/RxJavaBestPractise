@@ -486,4 +486,30 @@
     <string name="activity_category9_backpressure_operators_3_on_backpressure_latest">9.3 onBackpressureLatest</string>
     <string name="activity_category9_backpressure_operators_3_on_backpressure_latest_description">&#160;&#160;&#160;&#160;当Observable发出的元素的速度比订阅者消化得要快,订阅者会接收Observable最新发出的item进行处理。</string>
     <!-- 9. 反压操作 end -->
+
+    <!-- 10. 连接操作 start -->
+    <string name="activity_category10_connectable_observable_operators_1_connect">10.1 connect</string>
+    <string name="activity_category10_connectable_observable_operators_1_connect_description">&#160;&#160;&#160;&#160;让一个可连接的Observable开始发射数据给订阅者。
+        \n&#160;&#160;&#160;&#160;可连接的Observable (connectable Observable)与普通的Observable差不多，不过它并不会在被订阅时开始发射数据，而是直到使用了Connect操作符时才会开始。用这个方法，你可以等待所有的观察者都订阅了Observable之后再开始发射数据。
+        \n&#160;&#160;&#160;&#160;RxJava中connect是ConnectableObservable接口的一个方法，使用publish操作符可以将一个普通的Observable转换为一个ConnectableObservable。
+        \n&#160;&#160;&#160;&#160;调用ConnectableObservable的connect方法会让它后面的Observable开始给发射数据给订阅者。
+        \n&#160;&#160;&#160;&#160;connect方法返回一个Subscription对象，可以调用它的unsubscribe方法让Observable停止发射数据给观察者。
+        \n&#160;&#160;&#160;&#160;即使没有任何订阅者订阅它，你也可以使用connect方法让一个Observable开始发射数据（或者开始生成待发射的数据）。这样，你可以将一个"冷"的Observable变为"热"的。</string>
+
+    <string name="activity_category10_connectable_observable_operators_2_publish">10.2 publish</string>
+    <string name="activity_category10_connectable_observable_operators_2_publish_description">&#160;&#160;&#160;&#160;将普通的Observable转换为可连接的Observable。
+        \n&#160;&#160;&#160;&#160;可连接的Observable (connectable Observable)与普通的Observable差不多，不过它并不会在被订阅时开始发射数据，而是直到使用了Connect操作符时才会开始。用这种方法，你可以在任何时候让一个Observable开始发射数据。
+        \n&#160;&#160;&#160;&#160;有一个变体接受一个函数作为参数。这个函数用原始Observable发射的数据作为参数，产生一个新的数据作为ConnectableObservable给发射，替换原位置的数据项。实质是在签名的基础上添加一个Map操作。</string>
+
+    <string name="activity_category10_connectable_observable_operators_3_replay">10.3 replay</string>
+    <string name="activity_category10_connectable_observable_operators_3_replay_description">&#160;&#160;&#160;&#160;保证所有的观察者收到相同的数据序列，即使它们在Observable开始发射数据之后才订阅。
+        \n&#160;&#160;&#160;&#160;可连接的Observable (connectable Observable)与普通的Observable差不多，不过它并不会在被订阅时开始发射数据，而是直到使用了Connect操作符时才会开始。用这种方法，你可以在任何时候让一个Observable开始发射数据。
+        \n&#160;&#160;&#160;&#160;如果在将一个Observable转换为可连接的Observable之前对它使用Replay操作符，产生的这个可连接Observable将总是发射完整的数据序列给任何未来的观察者，即使那些观察者在这个Observable开始给其它观察者发射数据之后才订阅。
+        \n&#160;&#160;&#160;&#160;Replay操作符返回一个Connectable Observable 对象并且可以缓存其发射过的数据，这样即使有订阅者在其发射数据之后进行订阅也能收到其之前发射过的数据。不过使用Replay操作符我们最好还是限定其缓存的大小，否则缓存的数据太多了可会占用很大的一块内存。对缓存的控制可以从空间和时间两个方面来实现。</string>
+
+    <string name="activity_category10_connectable_observable_operators_4_ref_count">10.4 refCount</string>
+    <string name="activity_category10_connectable_observable_operators_4_ref_count_description">&#160;&#160;&#160;&#160;让一个可连接的Observable行为像普通的Observable。
+        \n&#160;&#160;&#160;&#160;可连接的Observable (connectable Observable)与普通的Observable差不多，不过它并不会在被订阅时开始发射数据，而是直到使用了Connect操作符时才会开始。用这种方法，你可以在任何时候让一个Observable开始发射数据。
+        \n&#160;&#160;&#160;&#160;RefCount操作符把从一个可连接的Observable连接和断开的过程自动化了。它操作一个可连接的Observable，返回一个普通的Observable。当第一个订阅者订阅这个Observable时，RefCount连接到下层的可连接Observable。RefCount跟踪有多少个观察者订阅它，直到最后一个观察者完成才断开与下层可连接Observable的连接。</string>
+    <!-- 10. 连接操作 end -->
 </resources>

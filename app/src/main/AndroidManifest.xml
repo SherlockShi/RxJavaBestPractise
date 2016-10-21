@@ -359,9 +359,27 @@
         </activity>
         <!-- 9. 反压操作 end -->
 
+        <!-- 10. 连接操作 start -->
         <activity android:name=".activity.category10_connectable_observable_operators.Category10_ConnectableObservableOperatorsActivity"
             android:label="@string/activity_main_10_connectable_observable_operators">
         </activity>
+
+        <activity android:name=".activity.category10_connectable_observable_operators.Category10Operator1ConnectActivity"
+            android:label="@string/activity_category10_connectable_observable_operators_1_connect">
+        </activity>
+
+        <activity android:name=".activity.category10_connectable_observable_operators.Category10Operator2PublishActivity"
+            android:label="@string/activity_category10_connectable_observable_operators_2_publish">
+        </activity>
+
+        <activity android:name=".activity.category10_connectable_observable_operators.Category10Operator3ReplayActivity"
+            android:label="@string/activity_category10_connectable_observable_operators_3_replay">
+        </activity>
+
+        <activity android:name=".activity.category10_connectable_observable_operators.Category10Operator4RefCountActivity"
+            android:label="@string/activity_category10_connectable_observable_operators_4_ref_count">
+        </activity>
+        <!-- 10. 连接操作 end -->
 
         <activity android:name=".activity.category11_operators_to_convert_observables.Category11_OperatorsToConvertObservablesActivity"
             android:label="@string/activity_main_11_operators_to_convert_observables">
