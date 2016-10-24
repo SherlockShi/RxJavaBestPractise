@@ -512,4 +512,42 @@
         \n&#160;&#160;&#160;&#160;可连接的Observable (connectable Observable)与普通的Observable差不多，不过它并不会在被订阅时开始发射数据，而是直到使用了Connect操作符时才会开始。用这种方法，你可以在任何时候让一个Observable开始发射数据。
         \n&#160;&#160;&#160;&#160;RefCount操作符把从一个可连接的Observable连接和断开的过程自动化了。它操作一个可连接的Observable，返回一个普通的Observable。当第一个订阅者订阅这个Observable时，RefCount连接到下层的可连接Observable。RefCount跟踪有多少个观察者订阅它，直到最后一个观察者完成才断开与下层可连接Observable的连接。</string>
     <!-- 10. 连接操作 end -->
+
+    <!-- 11. 转换操作 start -->
+    <string name="activity_category11_operators_to_convert_observables_1_get_iterator">11.1 getIterator</string>
+    <string name="activity_category11_operators_to_convert_observables_1_get_iterator_description">&#160;&#160;&#160;&#160;这个操作符将Observable转换为一个Iterator，你可以通过它迭代原始Observable发射的数据集。
+        \n&#160;&#160;&#160;&#160;getIterator操作符只能用于BlockingObservable的子类，要使用它，你首先必须把原始的Observable转换为一个BlockingObservable。可以使用这两个操作符：BlockingObservable.from或the Observable.toBlocking。</string>
+
+    <string name="activity_category11_operators_to_convert_observables_2_to_future">11.2 toFuture</string>
+    <string name="activity_category11_operators_to_convert_observables_2_to_future_description">&#160;&#160;&#160;&#160;这个操作符将Observable转换为一个返回单个数据项的Future。
+        \n&#160;&#160;&#160;&#160;toFuture操作符也是只能用于BlockingObservable。这个操作符将Observable转换为一个返回单个数据项的Future，如果原始Observable发射多个数据项，Future会收到一个IllegalArgumentException；如果原始Observable没有发射任何数据，Future会收到一个NoSuchElementException。
+        \n&#160;&#160;&#160;&#160;如果你想将发射多个数据项的Observable转换为Future，可以这样用：myObservable.toList().toBlocking().toFuture()。</string>
+
+    <string name="activity_category11_operators_to_convert_observables_3_to_iterable">11.3 toIterable</string>
+    <string name="activity_category11_operators_to_convert_observables_3_to_iterable_description">&#160;&#160;&#160;&#160;这个操作符将Observable转换为一个Iterable，你可以通过它迭代原始Observable发射的数据集。</string>
+
+    <string name="activity_category11_operators_to_convert_observables_4_to_list">11.4 toList</string>
+    <string name="activity_category11_operators_to_convert_observables_4_to_list_description">&#160;&#160;&#160;&#160;让Observable将多项数据组合成一个List，然后调用一次onNext方法传递整个列表。
+        \n&#160;&#160;&#160;&#160;通常，发射多项数据的Observable会为每一项数据调用onNext方法。你可以用toList操作符改变这个行为，让Observable将多项数据组合成一个List，然后调用一次onNext方法传递整个列表。
+        \n&#160;&#160;&#160;&#160;如果原始Observable没有发射任何数据就调用了onCompleted，toList返回的Observable会在调用onCompleted之前发射一个空列表。如果原始Observable调用了onError，toList返回的Observable会立即调用它的观察者的onError方法。
+        \n&#160;&#160;&#160;&#160;toList默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category11_operators_to_convert_observables_5_to_map">11.5 toMap</string>
+    <string name="activity_category11_operators_to_convert_observables_5_to_map_description">&#160;&#160;&#160;&#160;toMap收集原始Observable发射的所有数据项到一个Map（默认是HashMap）然后发射这个Map。
+        \n&#160;&#160;&#160;&#160;你可以提供一个用于生成Map的Key的函数，还可以提供一个函数转换数据项到Map存储的值（默认数据项本身就是值）。
+        \n&#160;&#160;&#160;&#160;toMap默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category11_operators_to_convert_observables_6_to_multi_map">11.6 toMultiMap</string>
+    <string name="activity_category11_operators_to_convert_observables_6_to_multi_map_description">&#160;&#160;&#160;&#160;toMultiMap类似于toMap，不同的是，它生成的这个Map同时还是一个ArrayList（默认是这样，你可以传递一个可选的工厂方法修改这个行为）。
+        \n&#160;&#160;&#160;&#160;toMultiMap默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category11_operators_to_convert_observables_7_to_sorted_list">11.7 toSortedList</string>
+    <string name="activity_category11_operators_to_convert_observables_7_to_sorted_list_description">&#160;&#160;&#160;&#160;toSortedList类似于toList，不同的是，它会对产生的列表排序，默认是自然升序，如果发射的数据项没有实现Comparable接口，会抛出一个异常。
+        \n&#160;&#160;&#160;&#160;然而，你也可以传递一个函数作为用于比较两个数据项，这是toSortedList不会使用Comparable接口。
+        \n&#160;&#160;&#160;&#160;toSortedList默认不在任何特定的调度器上执行。</string>
+
+    <string name="activity_category11_operators_to_convert_observables_8_nest">11.8 nest</string>
+    <string name="activity_category11_operators_to_convert_observables_8_nest_description">&#160;&#160;&#160;&#160;将一个Observable转换为一个发射这个Observable的Observable。
+        \n&#160;&#160;&#160;&#160;当和 嵌套的 Observable 打交道的时候，就要使用 nest 函数了。nest 函数把一个普通的非 嵌套 Observable 变为一个嵌套的 Observable。 nest 把一个源 Observable 变为一个嵌套的 Observable 发射出去就结束了。</string>
+    <!-- 11. 转换操作 end -->
 </resources>

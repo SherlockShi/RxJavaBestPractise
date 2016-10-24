@@ -381,9 +381,43 @@
         </activity>
         <!-- 10. 连接操作 end -->
 
+        <!-- 11. 转换操作 start -->
         <activity android:name=".activity.category11_operators_to_convert_observables.Category11_OperatorsToConvertObservablesActivity"
             android:label="@string/activity_main_11_operators_to_convert_observables">
         </activity>
+
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11Operator1GetIteratorActivity"
+            android:label="@string/activity_category11_operators_to_convert_observables_1_get_iterator">
+        </activity>
+
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11Operator2ToFutureActivity"
+            android:label="@string/activity_category11_operators_to_convert_observables_2_to_future">
+        </activity>
+
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11Operator3ToIterableActivity"
+            android:label="@string/activity_category11_operators_to_convert_observables_3_to_iterable">
+        </activity>
+
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11Operator4ToListActivity"
+            android:label="@string/activity_category11_operators_to_convert_observables_4_to_list">
+        </activity>
+
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11Operator5ToMapActivity"
+            android:label="@string/activity_category11_operators_to_convert_observables_5_to_map">
+        </activity>
+
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11Operator6ToMultiMapActivity"
+            android:label="@string/activity_category11_operators_to_convert_observables_6_to_multi_map">
+        </activity>
+
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11Operator7ToSortedListActivity"
+            android:label="@string/activity_category11_operators_to_convert_observables_7_to_sorted_list">
+        </activity>
+
+        <activity android:name=".activity.category11_operators_to_convert_observables.Category11Operator8NestActivity"
+            android:label="@string/activity_category11_operators_to_convert_observables_8_nest">
+        </activity>
+        <!-- 11. 转换操作 end -->
     </application>
 
 </manifest>
